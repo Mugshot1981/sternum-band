@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="nl">
 <head>
@@ -6,10 +5,13 @@
   <title>Sternum</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
       font-family: 'Inter', sans-serif;
@@ -17,146 +19,248 @@
       color: white;
     }
 
-    h1, h2 {
+    h2 {
       font-family: 'Bebas Neue', sans-serif;
       letter-spacing: 2px;
+      font-size: 42px;
+      margin: 0 0 24px 0;
     }
 
     .section {
-      padding: 60px 20px;
-      max-width: 1000px;
-      margin: auto;
+      padding: 80px 24px;
+      max-width: 1100px;
+      margin: 0 auto;
     }
 
     /* HERO */
- .hero {
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-
-  background: 
-    linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)),
-    url('herobanner.jpg');
-
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-color: black;
-}
-
-    .hero h1 {
-      font-size: 80px;
-      margin: 0;
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background: url('herobanner.jpg') center center / cover no-repeat;
+      background-color: black;
+      overflow: hidden;
     }
 
-    .hero button {
-      margin-top: 20px;
-      padding: 12px 24px;
-      background: white;
-      border: none;
+    /* subtiele overlay, niet zo zwaar dat je logo grijs wordt */
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(
+          to bottom,
+          rgba(0, 0, 0, 0.18),
+          rgba(0, 0, 0, 0.28)
+        );
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .metal-btn {
+      display: inline-block;
+      padding: 16px 34px;
+      min-width: 180px;
+
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 28px;
+      letter-spacing: 2px;
+      line-height: 1;
+      text-decoration: none;
+      text-align: center;
+
+      color: #f5f5f5;
+      background: linear-gradient(180deg, #2a2a2a 0%, #101010 100%);
+      border: 2px solid #7a1f1f;
+      border-radius: 2px;
+
+      box-shadow:
+        0 0 0 1px rgba(255,255,255,0.05) inset,
+        0 8px 24px rgba(0,0,0,0.45),
+        0 0 18px rgba(120, 12, 12, 0.28);
+
+      text-shadow:
+        0 1px 0 rgba(0,0,0,0.9),
+        0 0 8px rgba(0,0,0,0.5);
+
+      transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease, background 0.18s ease;
       cursor: pointer;
-      font-weight: bold;
     }
 
-    /* VIDEO */
+    .metal-btn:hover {
+      transform: translateY(-2px);
+      border-color: #b52b2b;
+      background: linear-gradient(180deg, #353535 0%, #121212 100%);
+      box-shadow:
+        0 0 0 1px rgba(255,255,255,0.06) inset,
+        0 10px 28px rgba(0,0,0,0.5),
+        0 0 24px rgba(181, 43, 43, 0.38);
+    }
+
+    .metal-btn:active {
+      transform: translateY(0);
+    }
+
+    /* RELEASE */
+    .release-card,
+    .about-card {
+      background: #111;
+      border: 1px solid #242424;
+      padding: 28px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+    }
+
     iframe {
       width: 100%;
-      height: 400px;
+      height: 420px;
       border: none;
+      display: block;
+      background: black;
     }
 
     /* SHOWS */
+    .shows-list {
+      background: #111;
+      border: 1px solid #242424;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+    }
+
     .show {
-      display: flex;
-      justify-content: space-between;
-      border-bottom: 1px solid #333;
-      padding: 10px 0;
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      gap: 16px;
+      padding: 18px 22px;
+      border-bottom: 1px solid #242424;
+    }
+
+    .show:last-child {
+      border-bottom: none;
+    }
+
+    .show-date {
+      font-family: 'Bebas Neue', sans-serif;
+      letter-spacing: 1px;
+      font-size: 28px;
+      color: #d9d9d9;
+    }
+
+    .show-place {
+      font-size: 18px;
+      color: #f1f1f1;
+    }
+
+    /* ABOUT */
+    .about-card p {
+      margin: 0;
+      font-size: 18px;
+      line-height: 1.7;
+      color: #d1d1d1;
+      max-width: 800px;
     }
 
     /* FOOTER */
     footer {
       text-align: center;
-      padding: 40px;
-      background: #111;
-      font-size: 14px;
+      padding: 48px 24px;
+      background: #0a0a0a;
+      border-top: 1px solid #1b1b1b;
+      color: #bcbcbc;
+      font-size: 15px;
     }
-    .metal-btn {
-  margin-top: 40px;
-  padding: 14px 32px;
 
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 18px;
-  letter-spacing: 2px;
+    footer p {
+      margin: 8px 0;
+    }
 
-  color: white;
-  background: linear-gradient(145deg, #1a1a1a, #000000);
+    @media (max-width: 768px) {
+      .hero {
+        background-position: center center;
+      }
 
-  border: 1px solid #444;
-  box-shadow:
-    0 0 10px rgba(255,0,0,0.2),
-    inset 0 0 5px rgba(255,255,255,0.1);
+      .metal-btn {
+        font-size: 24px;
+        min-width: 160px;
+        padding: 14px 28px;
+      }
 
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
+      h2 {
+        font-size: 34px;
+      }
 
-.metal-btn:hover {
-  border-color: #ff0000;
-  box-shadow:
-    0 0 15px rgba(255,0,0,0.6),
-    inset 0 0 8px rgba(255,255,255,0.2);
-  transform: scale(1.05);
-}
+      .show {
+        grid-template-columns: 1fr;
+        gap: 6px;
+      }
+
+      .show-date {
+        font-size: 24px;
+      }
+
+      .show-place {
+        font-size: 16px;
+      }
+
+      iframe {
+        height: 240px;
+      }
+    }
   </style>
 </head>
 
 <body>
 
-<!-- HERO -->
-<section class="hero">
- <div>
-  <button class="metal-btn">LISTEN NOW</button>
-</div>
-</section>
+  <section class="hero">
+    <div class="hero-content">
+      <a href="#release" class="metal-btn">LISTEN NOW</a>
+    </div>
+  </section>
 
-<!-- RELEASE -->
-<section class="section">
-  <h2>Latest Release</h2>
-  <iframe src="https://www.youtube.com/embed/YOUR_VIDEO"></iframe>
-</section>
+  <section class="section" id="release">
+    <h2>Latest Release</h2>
+    <div class="release-card">
+      <iframe src="https://www.youtube.com/embed/YOUR_VIDEO"></iframe>
+    </div>
+  </section>
 
-<!-- SHOWS -->
-<section class="section">
-  <h2>Shows</h2>
+  <section class="section">
+    <h2>Shows</h2>
+    <div class="shows-list">
+      <div class="show">
+        <div class="show-date">12 APR</div>
+        <div class="show-place">Rotterdam — Baroeg</div>
+      </div>
 
-  <div class="show">
-    <span>12 Apr</span>
-    <span>Rotterdam – Baroeg</span>
-  </div>
+      <div class="show">
+        <div class="show-date">28 APR</div>
+        <div class="show-place">Amsterdam — Melkweg</div>
+      </div>
+    </div>
+  </section>
 
-  <div class="show">
-    <span>28 Apr</span>
-    <span>Amsterdam – Melkweg</span>
-  </div>
+  <section class="section">
+    <h2>About</h2>
+    <div class="about-card">
+      <p>
+        Sternum is een opkomende metalband met een rauwe, moderne sound.
+        Strakke riffs, zware breakdowns en energieke live shows.
+      </p>
+    </div>
+  </section>
 
-</section>
-
-<!-- ABOUT -->
-<section class="section">
-  <h2>About</h2>
-  <p>
-    Sternum is een opkomende metalband met een rauwe, moderne sound.
-    Strakke riffs, zware breakdowns en energieke live shows.
-  </p>
-</section>
-
-<!-- FOOTER -->
-<footer>
-  <p>Follow Sternum</p>
-  <p>Instagram | Spotify | YouTube</p>
-</footer>
+  <footer>
+    <p>Follow Sternum</p>
+    <p>Instagram | Spotify | YouTube</p>
+  </footer>
 
 </body>
 </html>

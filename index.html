@@ -81,17 +81,19 @@ body {
 }
     /* HERO */
 
-    .hero {
-      position: relative;
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      background: url('herobanner.jpg') center center / cover no-repeat;
-      background-color: black;
-      overflow: hidden;
-    }
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: url('herobanner.jpg') center center / cover no-repeat;
+  background-color: black;
+  overflow: hidden;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
 
     .hero::before {
       content: "";

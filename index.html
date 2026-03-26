@@ -29,24 +29,18 @@
     * {
       box-sizing: border-box;
     }
-html {
-  scroll-behavior: smooth;
-  scroll-snap-type: y mandatory;
-}
 
-body {
-  margin: 0;
-  font-family: 'Inter', sans-serif;
-  background: var(--bg);
-  color: var(--text);
-  overflow-y: scroll;
-}
+    html {
+      scroll-behavior: smooth;
+      scroll-snap-type: y mandatory;
+    }
 
     body {
       margin: 0;
       font-family: 'Inter', sans-serif;
       background: var(--bg);
       color: var(--text);
+      overflow-y: scroll;
     }
 
     h1,
@@ -70,32 +64,28 @@ body {
       text-decoration: none;
     }
 
-.section {
-  width: 100%;
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 80px 24px;
-  min-height: 100vh;
-  scroll-snap-align: start;
-  scroll-snap-stop: always;
-}
-    /* HERO */
+    /* FULL SCREEN PANELS */
 
-.hero {
-  position: relative;
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  background: url('herobanner.jpg') center center / cover no-repeat;
-  background-color: black;
-  overflow: hidden;
-  scroll-snap-align: start;
-  scroll-snap-stop: always;
-}
+    .panel {
+      min-height: 100vh;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      scroll-snap-align: start;
+      scroll-snap-stop: always;
+      padding: 48px 24px;
+    }
 
-    .hero::before {
+    .panel.hero {
+      position: relative;
+      padding: 0;
+      background: url('herobanner.jpg') center center / cover no-repeat;
+      background-color: black;
+      overflow: hidden;
+    }
+
+    .panel.hero::before {
       content: "";
       position: absolute;
       inset: 0;
@@ -106,6 +96,21 @@ body {
       );
       pointer-events: none;
     }
+
+    .panel.footer-panel {
+      min-height: auto;
+      padding: 0;
+      align-items: stretch;
+    }
+
+    /* CONTENT CONTAINER */
+
+    .container {
+      width: 100%;
+      max-width: 1100px;
+    }
+
+    /* HERO CONTENT */
 
     .hero-content {
       position: absolute;
@@ -227,6 +232,7 @@ body {
     /* FOOTER */
 
     footer {
+      width: 100%;
       text-align: center;
       padding: 48px 24px;
       background: var(--bg-deep);
@@ -239,25 +245,43 @@ body {
       margin: 8px 0;
     }
 
-    /* MOBILE */
+    /* SMALL LAPTOPS / TABLETS */
 
-    @media (max-width: 768px) {
-      .section {
-        padding: 64px 18px;
+    @media (max-width: 1100px) {
+      .panel {
+        padding: 40px 20px;
       }
 
       h2 {
-        font-size: 34px;
-        margin-bottom: 20px;
+        font-size: 38px;
       }
 
-      .hero {
+      iframe {
+        height: 360px;
+      }
+
+      .metal-btn {
+        top: 80%;
+      }
+    }
+
+    /* MOBILE / IPAD SMALL */
+
+    @media (max-width: 768px) {
+      html {
+        scroll-snap-type: y proximity;
+      }
+
+      .panel {
         min-height: 100svh;
-        background:
-          url('herobanner-mobile.jpg') center center / cover no-repeat;
+        padding: 28px 16px;
       }
 
-      .hero::before {
+      .panel.hero {
+        background: url('herobanner-mobile.jpg') center center / cover no-repeat;
+      }
+
+      .panel.hero::before {
         background: linear-gradient(
           to bottom,
           rgba(0, 0, 0, 0.10),
@@ -265,14 +289,15 @@ body {
         );
       }
 
+      h2 {
+        font-size: 34px;
+        margin-bottom: 20px;
+      }
+
       .metal-btn {
         top: 84%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-
         min-width: 150px;
         padding: 12px 24px;
-
         font-size: 18px;
         letter-spacing: 1.5px;
         line-height: 1;
@@ -313,56 +338,83 @@ body {
         line-height: 1.6;
       }
     }
+
+    /* VERY SMALL PHONES */
+
+    @media (max-width: 420px) {
+      .metal-btn {
+        top: 86%;
+        min-width: 140px;
+        padding: 11px 20px;
+        font-size: 17px;
+      }
+
+      h2 {
+        font-size: 30px;
+      }
+
+      iframe {
+        height: 210px;
+      }
+    }
   </style>
 </head>
 <body>
 
-  <section class="hero">
+  <section class="panel hero">
     <div class="hero-content">
       <a href="#release" class="metal-btn">LISTEN NOW</a>
     </div>
   </section>
 
-  <section class="section" id="release">
-    <h2>Latest Release</h2>
-    <div class="release-card">
-      <iframe
-        src="https://www.youtube.com/embed/YOUR_VIDEO"
-        title="Latest Release"
-        allowfullscreen>
-      </iframe>
-    </div>
-  </section>
-
-  <section class="section">
-    <h2>Shows</h2>
-    <div class="shows-list">
-      <div class="show">
-        <div class="show-date">12 APR</div>
-        <div class="show-place">Rotterdam — Baroeg</div>
-      </div>
-
-      <div class="show">
-        <div class="show-date">28 APR</div>
-        <div class="show-place">Amsterdam — Melkweg</div>
+  <section class="panel" id="release">
+    <div class="container">
+      <h2>Latest Release</h2>
+      <div class="release-card">
+        <iframe
+          src="https://www.youtube.com/embed/YOUR_VIDEO"
+          title="Latest Release"
+          allowfullscreen>
+        </iframe>
       </div>
     </div>
   </section>
 
-  <section class="section">
-    <h2>About</h2>
-    <div class="about-card">
-      <p>
-        Sternum is een opkomende metalband met een rauwe, moderne sound.
-        Strakke riffs, zware breakdowns en energieke live shows.
-      </p>
+  <section class="panel" id="shows">
+    <div class="container">
+      <h2>Shows</h2>
+      <div class="shows-list">
+        <div class="show">
+          <div class="show-date">12 APR</div>
+          <div class="show-place">Rotterdam — Baroeg</div>
+        </div>
+
+        <div class="show">
+          <div class="show-date">28 APR</div>
+          <div class="show-place">Amsterdam — Melkweg</div>
+        </div>
+      </div>
     </div>
   </section>
 
-  <footer>
-    <p>Follow Sternum</p>
-    <p>Instagram | Spotify | YouTube</p>
-  </footer>
+  <section class="panel" id="about">
+    <div class="container">
+      <h2>About</h2>
+      <div class="about-card">
+        <p>
+          Sternum is een opkomende metalband met een rauwe, moderne sound.
+          Strakke riffs, zware breakdowns en energieke live shows.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="panel footer-panel">
+    <footer>
+      <p>Follow Sternum</p>
+      <p>Instagram | Spotify | YouTube</p>
+    </footer>
+  </section>
 
 </body>
 </html>

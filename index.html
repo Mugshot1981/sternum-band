@@ -323,7 +323,52 @@
     0 40px 100px rgba(0,0,0,0.9),
     0 0 60px rgba(139,0,0,0.3);
 }
+/* About hoger in beeld */
+.about-panel {
+  align-items: flex-start;
+  padding-top: 120px;
+}
 
+/* Layout naast elkaar */
+.about-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+/* Foto stijl */
+.about-image {
+  position: relative;
+  border: 1px solid rgba(255,255,255,0.1);
+  overflow: hidden;
+
+  box-shadow:
+    0 20px 60px rgba(0,0,0,0.7),
+    0 0 20px rgba(139,0,0,0.15);
+}
+
+.about-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* subtiele rand / glow */
+.about-image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 1px solid rgba(139,0,0,0.4);
+  pointer-events: none;
+}
+
+/* tekst blok */
+.about-card {
+  background: var(--bg-soft);
+  border: 1px solid var(--border);
+  padding: 28px;
+}
     /* SHOWS */
 
     .shows-list {
@@ -625,17 +670,28 @@
     </div>
   </section>
 
-  <section class="panel" id="about">
-    <div class="container">
-      <h2>About</h2>
+<section class="panel about-panel" id="about">
+  <div class="container">
+
+    <h2>About</h2>
+
+    <div class="about-layout">
+
+      <div class="about-image">
+        <img src="sternum1.png" alt="Sternum band">
+      </div>
+
       <div class="about-card">
         <p>
           Sternum is een opkomende metalband met een rauwe, moderne sound.
           Strakke riffs, zware breakdowns en energieke live shows.
         </p>
       </div>
+
     </div>
-  </section>
+
+  </div>
+</section>
 
   <section class="panel footer-panel">
     <footer>

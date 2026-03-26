@@ -485,6 +485,47 @@
       <p>Instagram | Spotify | YouTube</p>
     </footer>
   </section>
+<script src="https://www.youtube.com/iframe_api"></script>
+<script>
+  let sternumPlayer = null;
+  let isMuted = true;
 
+  function onYouTubeIframeAPIReady() {
+    sternumPlayer = new YT.Player('sternum-player', {
+      videoId: '8SoVOSPKfFM',
+      playerVars: {
+        autoplay: 1,
+        mute: 1,
+        controls: 0,
+        modestbranding: 1,
+        rel: 0,
+        playsinline: 1,
+        loop: 1,
+        playlist: '8SoVOSPKfFM'
+      },
+      events: {
+        onReady: function () {
+          const btn = document.getElementById('soundToggle');
+
+          btn.addEventListener('click', function () {
+            if (!sternumPlayer) return;
+
+            if (isMuted) {
+              sternumPlayer.unMute();
+              sternumPlayer.setVolume(100);
+              sternumPlayer.playVideo();
+              btn.textContent = 'SOUND OFF';
+              isMuted = false;
+            } else {
+              sternumPlayer.mute();
+              btn.textContent = 'SOUND ON';
+              isMuted = true;
+            }
+          });
+        }
+      }
+    });
+  }
+</script>
 </body>
 </html>

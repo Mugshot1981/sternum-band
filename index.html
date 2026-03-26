@@ -185,50 +185,26 @@
       display: block;
       background: black;
     }
-.video-full {
-  width: 100%;
-  padding: 0 20px;
+.video-panel {
+  padding: 0;
+  background: #000;
 }
 
 .video-wrapper {
   position: relative;
   width: 100%;
-  max-width: 1400px;
-  margin: 0 auto;
-
-  border: 1px solid var(--border);
+  height: 100vh;
+  min-height: 700px;
+  margin: 0;
   background: #000;
-
-  box-shadow:
-    0 30px 80px rgba(0,0,0,0.8),
-    0 0 40px rgba(139,0,0,0.2);
-
   overflow: hidden;
 }
 
-/* 16:9 aspect ratio */
-.video-wrapper::before {
-  content: "";
-  display: block;
-  padding-top: 50%;
-}
-
 .video-wrapper iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
   height: 100%;
   border: none;
-}
-
-
-
-/* subtle glow on hover */
-.video-wrapper:hover {
-  box-shadow:
-    0 25px 60px rgba(0,0,0,0.7),
-    0 0 30px rgba(139,0,0,0.4);
+  display: block;
 }
 
     /* SHOWS */

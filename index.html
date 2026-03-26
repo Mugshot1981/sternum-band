@@ -51,7 +51,8 @@
     }
 
     h1,
-    h2 {
+    h2,
+    h3 {
       font-family: 'Bebas Neue', sans-serif;
       letter-spacing: 2px;
     }
@@ -80,11 +81,9 @@
       left: 0;
       width: 100%;
       z-index: 2000;
-
       background: rgba(0, 0, 0, 0.55);
       backdrop-filter: blur(10px);
       -webkit-backdrop-filter: blur(10px);
-
       border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     }
 
@@ -92,7 +91,6 @@
       max-width: 1400px;
       margin: 0 auto;
       padding: 16px 24px;
-
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -129,18 +127,16 @@
     }
 
     /* =========================
-       4. SCROLL DOTS RECHTS
+       4. SCROLL DOTS
        ========================= */
     .scroll-dots {
       position: fixed;
       right: 20px;
       top: 50%;
       transform: translateY(-50%);
-
       display: flex;
       flex-direction: column;
       gap: 12px;
-
       z-index: 1000;
     }
 
@@ -212,37 +208,29 @@
       z-index: 2;
     }
 
-    /* Hero CTA knop */
     .metal-btn {
       position: absolute;
       left: 50%;
       top: 78%;
       transform: translate(-50%, -50%);
-
       min-width: 170px;
       padding: 14px 36px;
-
       font-family: 'Bebas Neue', sans-serif;
       font-size: 20px;
       letter-spacing: 2px;
       line-height: 1.1;
       text-align: center;
-
       color: #ffffff;
       background: rgba(0, 0, 0, 0.72);
       border: 1px solid rgba(255, 255, 255, 0.18);
-
       backdrop-filter: blur(6px);
       -webkit-backdrop-filter: blur(6px);
-
       text-shadow: 0 0 8px rgba(0, 0, 0, 0.8);
-
       transition:
         border-color 0.2s ease,
         box-shadow 0.2s ease,
         background 0.2s ease,
         transform 0.2s ease;
-
       cursor: pointer;
     }
 
@@ -260,6 +248,10 @@
     /* =========================
        7. RELEASE VIDEO
        ========================= */
+    #release {
+      scroll-margin-top: 110px;
+    }
+
     .video-container {
       display: flex;
       justify-content: center;
@@ -267,31 +259,26 @@
       z-index: 5;
     }
 
-.video-shell {
-  width: 100%;
-  max-width: 1280px;
-  margin: -40px auto 0;
-  position: relative;
-  z-index: 5;
-  overflow: hidden;
-}
-#release {
-  scroll-margin-top: 110px;
-}
+    .video-shell {
+      width: 100%;
+      max-width: 1280px;
+      margin: -40px auto 0;
+      position: relative;
+      z-index: 5;
+      overflow: hidden;
+    }
+
     .sound-btn {
       display: inline-block;
       margin: 0 0 14px auto;
       padding: 10px 18px;
-
       font-family: 'Bebas Neue', sans-serif;
       font-size: 18px;
       letter-spacing: 1.5px;
       line-height: 1;
-
       color: #ffffff;
       background: rgba(0, 0, 0, 0.78);
       border: 1px solid rgba(255, 255, 255, 0.16);
-
       cursor: pointer;
       transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
     }
@@ -314,14 +301,12 @@
       z-index: 2;
     }
 
-    /* 16:9 frame */
     .video-wrapper::before {
       content: "";
       display: block;
       padding-top: 56.25%;
     }
 
-    /* YouTube player container */
     .video-wrapper #sternum-player {
       position: absolute;
       inset: 0;
@@ -329,7 +314,6 @@
       height: 100%;
     }
 
-    /* Ingezoomde YouTube iframe om betere crop te krijgen */
     .video-wrapper #sternum-player iframe {
       position: absolute;
       top: 50%;
@@ -348,7 +332,7 @@
     }
 
     /* =========================
-       8. SHOWS + ACHTERGROND
+       8. SHOWS / TOUR STYLE
        ========================= */
     .shows-bg {
       position: relative;
@@ -359,246 +343,214 @@
       content: "";
       position: absolute;
       inset: 0;
-      background: rgba(0, 0, 0, 0.65);
+      background: rgba(0, 0, 0, 0.68);
       z-index: 1;
     }
 
     .shows-bg .container {
       position: relative;
       z-index: 2;
+      max-width: 1280px;
     }
 
-  /* TOUR STYLE SHOWS */
-.tour-list {
-  display: flex;
-  flex-direction: column;
-  border-top: 1px solid rgba(255,255,255,0.08);
-}
+    .tour-list {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
 
-.tour-row {
-  display: grid;
-  grid-template-columns: 120px 1fr 120px;
-  gap: 24px;
-  align-items: center;
+    .tour-row {
+      display: grid;
+      grid-template-columns: 140px 1fr;
+      gap: 36px;
+      align-items: center;
+      padding: 30px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
 
-  padding: 24px 0;
-  border-bottom: 1px solid rgba(255,255,255,0.08);
-}
+    .tour-date {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      line-height: 1;
+      flex-shrink: 0;
+    }
 
-.tour-date {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  line-height: 1;
-}
+    .tour-day {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 72px;
+      letter-spacing: 1px;
+      color: #ffffff;
+    }
 
-.tour-day {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 54px;
-  letter-spacing: 1px;
-  color: #ffffff;
-}
+    .tour-month {
+      margin-top: 8px;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 20px;
+      letter-spacing: 2px;
+      color: var(--accent-hover);
+    }
 
-.tour-month {
-  margin-top: 6px;
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 18px;
-  letter-spacing: 2px;
-  color: var(--accent-hover);
-}
+    .tour-info {
+      min-width: 0;
+    }
 
-.tour-info {
-  min-width: 0;
-}
+    .tour-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 48px;
+      letter-spacing: 1.5px;
+      color: #ffffff;
+      line-height: 1;
+    }
 
-.tour-title {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 34px;
-  letter-spacing: 1.5px;
-  color: #ffffff;
-}
+    .tour-meta {
+      margin-top: 10px;
+      font-size: 22px;
+      line-height: 1.5;
+      color: var(--text-soft);
+    }
 
-.tour-meta {
-  margin-top: 6px;
-  font-size: 17px;
-  line-height: 1.5;
-  color: var(--text-soft);
-}
-
-.tour-action {
-  display: flex;
-  justify-content: flex-end;
-}
-
-.tour-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-
-  min-width: 92px;
-  padding: 10px 16px;
-
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 17px;
-  letter-spacing: 1.2px;
-
-  color: #ffffff;
-  border: 1px solid rgba(255,255,255,0.16);
-  background: rgba(0,0,0,0.35);
-
-  transition: border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
-}
-
-.tour-btn:hover {
-  border-color: var(--accent);
-  background: rgba(0,0,0,0.55);
-  box-shadow: 0 0 16px rgba(139,0,0,0.22);
-}
     /* =========================
        9. ABOUT
-       Grote foto boven, tekst eronder
        ========================= */
-   .about-panel {
-  align-items: flex-start;
-  padding-top: 120px;
-}
+    .about-panel {
+      align-items: flex-start;
+      padding-top: 120px;
+    }
 
-.about-stack {
-  display: flex;
-  flex-direction: column;
-  gap: 28px;
-}
+    .about-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+    }
 
-.about-image-large {
-  position: relative;
-  width: 100%;
-  overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow:
-    0 40px 100px rgba(0, 0, 0, 0.9),
-    0 0 40px rgba(139, 0, 0, 0.15);
-}
+    .about-image-large {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow:
+        0 40px 100px rgba(0, 0, 0, 0.9),
+        0 0 40px rgba(139, 0, 0, 0.15);
+    }
 
-.about-image-large img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
+    .about-image-large img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
 
-.about-image-large::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border: 1px solid rgba(139, 0, 0, 0.35);
-  pointer-events: none;
-}
+    .about-image-large::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border: 1px solid rgba(139, 0, 0, 0.35);
+      pointer-events: none;
+    }
 
-.about-summary {
-  max-width: 760px;
-  margin: 0 auto;
-  text-align: center;
-}
+    .about-summary {
+      max-width: 760px;
+      margin: 0 auto;
+      text-align: center;
+    }
 
-.about-summary p {
-  font-size: 20px;
-  line-height: 1.7;
-  color: var(--text);
-  margin-bottom: 18px;
-}
+    .about-summary p {
+      font-size: 20px;
+      line-height: 1.7;
+      color: var(--text);
+      margin-bottom: 18px;
+    }
 
-.read-more-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 12px 22px;
+    .read-more-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 22px;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 18px;
+      letter-spacing: 1.5px;
+      line-height: 1;
+      color: #ffffff;
+      background: rgba(0, 0, 0, 0.78);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      cursor: pointer;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    }
 
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 18px;
-  letter-spacing: 1.5px;
-  line-height: 1;
+    .read-more-btn:hover {
+      border-color: var(--accent);
+      box-shadow: 0 0 16px rgba(139, 0, 0, 0.28);
+      background: rgba(0, 0, 0, 0.9);
+    }
 
-  color: #ffffff;
-  background: rgba(0, 0, 0, 0.78);
-  border: 1px solid rgba(255,255,255,0.16);
+    /* About modal */
+    .about-modal {
+      position: fixed;
+      inset: 0;
+      z-index: 3000;
+      display: none;
+    }
 
-  cursor: pointer;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
-}
+    .about-modal.is-open {
+      display: block;
+    }
 
-.read-more-btn:hover {
-  border-color: var(--accent);
-  box-shadow: 0 0 16px rgba(139,0,0,0.28);
-  background: rgba(0, 0, 0, 0.9);
-}
+    .about-modal-backdrop {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.78);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+    }
 
-/* ABOUT MODAL */
-.about-modal {
-  position: fixed;
-  inset: 0;
-  z-index: 3000;
-  display: none;
-}
+    .about-modal-dialog {
+      position: relative;
+      width: min(760px, calc(100% - 32px));
+      margin: 10vh auto 0;
+      background: #0f0f0f;
+      border: 1px solid var(--border);
+      box-shadow:
+        0 30px 90px rgba(0, 0, 0, 0.85),
+        0 0 30px rgba(139, 0, 0, 0.18);
+      padding: 32px 28px 28px;
+      z-index: 2;
+    }
 
-.about-modal.is-open {
-  display: block;
-}
+    .about-modal-dialog h3 {
+      margin: 0 0 18px 0;
+      font-size: 34px;
+      color: var(--text);
+    }
 
-.about-modal-backdrop {
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.78);
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
-}
+    .about-modal-content {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
 
-.about-modal-dialog {
-  position: relative;
-  width: min(760px, calc(100% - 32px));
-  margin: 10vh auto 0;
-  background: #0f0f0f;
-  border: 1px solid var(--border);
-  box-shadow:
-    0 30px 90px rgba(0,0,0,0.85),
-    0 0 30px rgba(139,0,0,0.18);
-  padding: 32px 28px 28px;
-  z-index: 2;
-}
+    .about-modal-content p {
+      font-size: 18px;
+      line-height: 1.75;
+      color: var(--text-soft);
+    }
 
-.about-modal-dialog h3 {
-  margin: 0 0 18px 0;
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 34px;
-  letter-spacing: 2px;
-  color: var(--text);
-}
+    .about-modal-close {
+      position: absolute;
+      top: 10px;
+      right: 14px;
+      border: none;
+      background: transparent;
+      color: rgba(255, 255, 255, 0.75);
+      font-size: 28px;
+      line-height: 1;
+      cursor: pointer;
+    }
 
-.about-modal-content {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
+    .about-modal-close:hover {
+      color: #ffffff;
+    }
 
-.about-modal-content p {
-  font-size: 18px;
-  line-height: 1.75;
-  color: var(--text-soft);
-}
-
-.about-modal-close {
-  position: absolute;
-  top: 10px;
-  right: 14px;
-  border: none;
-  background: transparent;
-  color: rgba(255,255,255,0.75);
-  font-size: 28px;
-  line-height: 1;
-  cursor: pointer;
-}
-
-.about-modal-close:hover {
-  color: #ffffff;
-}
     /* =========================
        10. FOOTER
        ========================= */
@@ -617,7 +569,7 @@
     }
 
     /* =========================
-       11. RESPONSIVE - TABLET/KLEINE LAPTOP
+       11. RESPONSIVE - TABLET
        ========================= */
     @media (max-width: 1100px) {
       .panel {
@@ -631,10 +583,27 @@
       .metal-btn {
         top: 80%;
       }
+
+      .tour-row {
+        grid-template-columns: 120px 1fr;
+        gap: 28px;
+      }
+
+      .tour-day {
+        font-size: 60px;
+      }
+
+      .tour-title {
+        font-size: 40px;
+      }
+
+      .tour-meta {
+        font-size: 19px;
+      }
     }
 
     /* =========================
-       12. RESPONSIVE - MOBILE/IPAD SMALL
+       12. RESPONSIVE - MOBILE
        ========================= */
     @media (max-width: 768px) {
       html {
@@ -703,16 +672,25 @@
         transform: translate(-50%, -50%);
       }
 
-      .show {
+      .tour-row {
         grid-template-columns: 1fr;
-        gap: 6px;
+        gap: 12px;
+        padding: 22px 0;
       }
 
-      .show-date {
-        font-size: 24px;
+      .tour-day {
+        font-size: 48px;
       }
 
-      .show-place {
+      .tour-month {
+        font-size: 16px;
+      }
+
+      .tour-title {
+        font-size: 30px;
+      }
+
+      .tour-meta {
         font-size: 16px;
       }
 
@@ -720,29 +698,29 @@
         padding-top: 80px;
       }
 
-.about-summary p {
-  font-size: 16px;
-  line-height: 1.6;
-}
+      .about-summary p {
+        font-size: 16px;
+        line-height: 1.6;
+      }
 
-.about-modal-dialog {
-  width: calc(100% - 20px);
-  margin-top: 8vh;
-  padding: 24px 18px 20px;
-}
+      .about-modal-dialog {
+        width: calc(100% - 20px);
+        margin-top: 8vh;
+        padding: 24px 18px 20px;
+      }
 
-.about-modal-dialog h3 {
-  font-size: 28px;
-}
+      .about-modal-dialog h3 {
+        font-size: 28px;
+      }
 
-.about-modal-content p {
-  font-size: 16px;
-  line-height: 1.65;
-}
+      .about-modal-content p {
+        font-size: 16px;
+        line-height: 1.65;
+      }
     }
 
     /* =========================
-       13. RESPONSIVE - HEEL KLEINE TELEFOONS
+       13. RESPONSIVE - HEEL KLEIN
        ========================= */
     @media (max-width: 420px) {
       .metal-btn {
@@ -754,6 +732,14 @@
 
       h2 {
         font-size: 30px;
+      }
+
+      .tour-day {
+        font-size: 42px;
+      }
+
+      .tour-title {
+        font-size: 26px;
       }
     }
   </style>
@@ -780,7 +766,7 @@
 
   <!-- =========================
        SCROLL DOTS
-       5 dots = hero / release / shows / about / footer
+       hero / release / shows / about / footer
        ========================= -->
   <div class="scroll-dots">
     <span></span>
@@ -815,137 +801,124 @@
   </section>
 
   <!-- =========================
-       SHOWS
+       SHOWS / TOUR STYLE
        ========================= -->
-<section class="panel shows-bg" id="shows">
-  <div class="container">
-    <h2>Shows</h2>
+  <section class="panel shows-bg" id="shows">
+    <div class="container">
+      <h2>Shows</h2>
 
-    <div class="tour-list">
+      <div class="tour-list">
 
-      <div class="tour-row">
-        <div class="tour-date">
-          <span class="tour-day">30</span>
-          <span class="tour-month">JAN</span>
+        <div class="tour-row">
+          <div class="tour-date">
+            <span class="tour-day">30</span>
+            <span class="tour-month">JAN</span>
+          </div>
+          <div class="tour-info">
+            <div class="tour-title">Café Kroon</div>
+            <div class="tour-meta">Arnhem · met Baardvader · sold out</div>
+          </div>
         </div>
-        <div class="tour-info">
-          <div class="tour-title">Café Kroon</div>
-          <div class="tour-meta">Arnhem · met Baardvader · sold out</div>
+
+        <div class="tour-row">
+          <div class="tour-date">
+            <span class="tour-day">04</span>
+            <span class="tour-month">FEB</span>
+          </div>
+          <div class="tour-info">
+            <div class="tour-title">Willemeen</div>
+            <div class="tour-meta">Arnhem · Blackout / Mokrypse / Sternum</div>
+          </div>
         </div>
-        <div class="tour-action">
-          <a href="#" class="tour-btn">Poster</a>
+
+        <div class="tour-row">
+          <div class="tour-date">
+            <span class="tour-day">21</span>
+            <span class="tour-month">MAR</span>
+          </div>
+          <div class="tour-info">
+            <div class="tour-title">Nest Fest — Café Bosch</div>
+            <div class="tour-meta">Arnhem · met meerdere bands</div>
+          </div>
         </div>
+
+        <div class="tour-row">
+          <div class="tour-date">
+            <span class="tour-day">19</span>
+            <span class="tour-month">NOV</span>
+          </div>
+          <div class="tour-info">
+            <div class="tour-title">Willemeen</div>
+            <div class="tour-meta">Arnhem · met Uncentered + DANA</div>
+          </div>
+        </div>
+
+        <div class="tour-row">
+          <div class="tour-date">
+            <span class="tour-day">13</span>
+            <span class="tour-month">DEC</span>
+          </div>
+          <div class="tour-info">
+            <div class="tour-title">Godfest — Willemeen</div>
+            <div class="tour-meta">Arnhem · line-up show</div>
+          </div>
+        </div>
+
       </div>
-
-      <div class="tour-row">
-        <div class="tour-date">
-          <span class="tour-day">04</span>
-          <span class="tour-month">FEB</span>
-        </div>
-        <div class="tour-info">
-          <div class="tour-title">Willemeen</div>
-          <div class="tour-meta">Arnhem · Blackout / Mokrypse / Sternum</div>
-        </div>
-        <div class="tour-action">
-          <a href="#" class="tour-btn">Poster</a>
-        </div>
-      </div>
-
-      <div class="tour-row">
-        <div class="tour-date">
-          <span class="tour-day">21</span>
-          <span class="tour-month">MAR</span>
-        </div>
-        <div class="tour-info">
-          <div class="tour-title">Nest Fest — Café Bosch</div>
-          <div class="tour-meta">Arnhem · met meerdere bands</div>
-        </div>
-        <div class="tour-action">
-          <a href="#" class="tour-btn">Poster</a>
-        </div>
-      </div>
-
-      <div class="tour-row">
-        <div class="tour-date">
-          <span class="tour-day">19</span>
-          <span class="tour-month">NOV</span>
-        </div>
-        <div class="tour-info">
-          <div class="tour-title">Willemeen</div>
-          <div class="tour-meta">Arnhem · met Uncentered + DANA</div>
-        </div>
-        <div class="tour-action">
-          <a href="#" class="tour-btn">Info</a>
-        </div>
-      </div>
-
-      <div class="tour-row">
-        <div class="tour-date">
-          <span class="tour-day">13</span>
-          <span class="tour-month">DEC</span>
-        </div>
-        <div class="tour-info">
-          <div class="tour-title">Godfest — Willemeen</div>
-          <div class="tour-meta">Arnhem · line-up show</div>
-        </div>
-        <div class="tour-action">
-          <a href="#" class="tour-btn">Poster</a>
-        </div>
-      </div>
-
     </div>
-  </div>
-</section>
+  </section>
 
   <!-- =========================
        ABOUT
-       Grote foto boven, tekst eronder
        ========================= -->
-<section class="panel about-panel" id="about">
-  <div class="container">
-    <h2>About</h2>
+  <section class="panel about-panel" id="about">
+    <div class="container">
+      <h2>About</h2>
 
-    <div class="about-stack">
-      <div class="about-image-large">
-        <img src="sternum1.png" alt="Sternum band">
+      <div class="about-stack">
+        <div class="about-image-large">
+          <img src="sternum1.png" alt="Sternum band">
+        </div>
+
+        <div class="about-summary">
+          <p>
+            Sternum is een opkomende metalband met een rauwe, moderne sound, strakke riffs en energieke live shows.
+          </p>
+          <button class="read-more-btn" id="openAboutModal" type="button">LEES MEER</button>
+        </div>
       </div>
+    </div>
+  </section>
 
-      <div class="about-summary">
+  <!-- =========================
+       ABOUT MODAL
+       ========================= -->
+  <div class="about-modal" id="aboutModal" aria-hidden="true">
+    <div class="about-modal-backdrop" id="closeAboutModal"></div>
+
+    <div class="about-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="aboutModalTitle">
+      <button class="about-modal-close" id="closeAboutModalBtn" type="button" aria-label="Sluiten">×</button>
+
+      <h3 id="aboutModalTitle">About Sternum</h3>
+
+      <div class="about-modal-content">
         <p>
-          Sternum is een opkomende metalband met een rauwe, moderne sound, strakke riffs en energieke live shows.
+          Sternum is een opkomende metalband met een rauwe, moderne sound.
+          De band combineert strakke riffs, zware breakdowns en energieke live shows
+          tot een directe en intense liveset.
         </p>
-        <button class="read-more-btn" id="openAboutModal" type="button">LEES MEER</button>
+
+        <p>
+          Met een donkere visuele stijl en een sterke focus op sfeer en performance
+          bouwt Sternum aan een eigen identiteit die zowel live als online herkenbaar is.
+        </p>
+
+        <p>
+          Deze website is het centrale punt voor releases, shows en nieuwe updates rond de band.
+        </p>
       </div>
     </div>
   </div>
-</section>
-
-<div class="about-modal" id="aboutModal" aria-hidden="true">
-  <div class="about-modal-backdrop" id="closeAboutModal"></div>
-
-  <div class="about-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="aboutModalTitle">
-    <button class="about-modal-close" id="closeAboutModalBtn" type="button" aria-label="Sluiten">×</button>
-
-    <h3 id="aboutModalTitle">About Sternum</h3>
-
-    <div class="about-modal-content">
-      <p>
-        Sternum is een opkomende metalband met een rauwe, moderne sound.
-        De band combineert strakke riffs, zware breakdowns en energieke live shows
-        tot een directe en intense liveset.
-      </p>
-
-      <p>
-        Met een donkere visuele stijl en een sterke focus op sfeer en performance
-        bouwt Sternum aan een eigen identiteit die zowel live als online herkenbaar is.
-      </p>
-
-      <p>
-        Deze website is het centrale punt voor releases, shows en nieuwe updates rond de band.
-      </p>
-    </div>
-  </div>
-</div>
 
   <!-- =========================
        FOOTER
@@ -959,7 +932,6 @@
 
   <!-- =========================
        YOUTUBE IFRAME API
-       Video autoplay muted + sound toggle
        ========================= -->
   <script src="https://www.youtube.com/iframe_api"></script>
   <script>
@@ -1006,7 +978,6 @@
 
   <!-- =========================
        SCROLL DOTS ACTIVE STATE
-       Koppelt actieve dot aan dichtstbijzijnde panel
        ========================= -->
   <script>
     const panels = document.querySelectorAll('.panel');
@@ -1036,29 +1007,33 @@
     window.addEventListener('scroll', updateDots);
     updateDots();
   </script>
+
+  <!-- =========================
+       ABOUT MODAL OPEN/CLOSE
+       ========================= -->
   <script>
-  const aboutModal = document.getElementById('aboutModal');
-  const openAboutModal = document.getElementById('openAboutModal');
-  const closeAboutModal = document.getElementById('closeAboutModal');
-  const closeAboutModalBtn = document.getElementById('closeAboutModalBtn');
+    const aboutModal = document.getElementById('aboutModal');
+    const openAboutModal = document.getElementById('openAboutModal');
+    const closeAboutModal = document.getElementById('closeAboutModal');
+    const closeAboutModalBtn = document.getElementById('closeAboutModalBtn');
 
-  function openModal() {
-    aboutModal.classList.add('is-open');
-    aboutModal.setAttribute('aria-hidden', 'false');
-  }
+    function openModal() {
+      aboutModal.classList.add('is-open');
+      aboutModal.setAttribute('aria-hidden', 'false');
+    }
 
-  function closeModal() {
-    aboutModal.classList.remove('is-open');
-    aboutModal.setAttribute('aria-hidden', 'true');
-  }
+    function closeModal() {
+      aboutModal.classList.remove('is-open');
+      aboutModal.setAttribute('aria-hidden', 'true');
+    }
 
-  if (openAboutModal) openAboutModal.addEventListener('click', openModal);
-  if (closeAboutModal) closeAboutModal.addEventListener('click', closeModal);
-  if (closeAboutModalBtn) closeAboutModalBtn.addEventListener('click', closeModal);
+    if (openAboutModal) openAboutModal.addEventListener('click', openModal);
+    if (closeAboutModal) closeAboutModal.addEventListener('click', closeModal);
+    if (closeAboutModalBtn) closeAboutModalBtn.addEventListener('click', closeModal);
 
-  document.addEventListener('keydown', function (event) {
-    if (event.key === 'Escape') closeModal();
-  });
-</script>
+    document.addEventListener('keydown', function (event) {
+      if (event.key === 'Escape') closeModal();
+    });
+  </script>
 </body>
 </html>

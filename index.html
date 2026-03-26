@@ -185,10 +185,11 @@
       display: block;
       background: black;
     }
+
 .video-container {
   display: flex;
   justify-content: center;
-  margin-top: -120px;
+  margin-top: 0;
   position: relative;
   z-index: 5;
 }
@@ -196,7 +197,7 @@
 .video-shell {
   width: 100%;
   max-width: 1280px;
-  margin: -120px auto 0;
+  margin: -90px auto 0;
   position: relative;
   z-index: 5;
 
@@ -204,6 +205,8 @@
   background: url('background-setlist.jpg') center / cover no-repeat;
   overflow: hidden;
 }
+
+
 .video-shell::before {
   content: "";
   position: absolute;

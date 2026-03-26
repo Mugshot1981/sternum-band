@@ -193,7 +193,27 @@
   z-index: 5;
 }
 
-.video-s
+.video-shell {
+  width: 100%;
+  max-width: 1280px;
+  margin: -120px auto 0;
+  position: relative;
+  z-index: 5;
+
+  /* achtergrond */
+  background: url('background-setlist.jpg') center / cover no-repeat;
+  overflow: hidden;
+}
+.video-shell::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  /* 👇 HIER regel je de donkerte */
+  background: rgba(0, 0, 0, 0.65);
+
+  z-index: 1;
+}
 .sound-btn {
   display: inline-block;
   margin: 0 0 14px auto;
@@ -227,6 +247,8 @@
     0 30px 80px rgba(0,0,0,0.8),
     0 0 40px rgba(139,0,0,0.15);
   overflow: hidden;
+ 
+  z-index: 2;
 }
 
 .video-wrapper::before {

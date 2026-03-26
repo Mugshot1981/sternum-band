@@ -82,6 +82,33 @@
       background: #111;
       font-size: 14px;
     }
+    .metal-btn {
+  margin-top: 40px;
+  padding: 14px 32px;
+
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 18px;
+  letter-spacing: 2px;
+
+  color: white;
+  background: linear-gradient(145deg, #1a1a1a, #000000);
+
+  border: 1px solid #444;
+  box-shadow:
+    0 0 10px rgba(255,0,0,0.2),
+    inset 0 0 5px rgba(255,255,255,0.1);
+
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.metal-btn:hover {
+  border-color: #ff0000;
+  box-shadow:
+    0 0 15px rgba(255,0,0,0.6),
+    inset 0 0 8px rgba(255,255,255,0.2);
+  transform: scale(1.05);
+}
   </style>
 </head>
 
@@ -89,11 +116,9 @@
 
 <!-- HERO -->
 <section class="hero">
-  <div>
-    <h1>STERNUM</h1>
-    <p>Modern Metal from NL</p>
-    <button>Luister nu</button>
-  </div>
+ <div>
+  <button class="metal-btn">LISTEN NOW</button>
+</div>
 </section>
 
 <!-- RELEASE -->

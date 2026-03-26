@@ -918,5 +918,29 @@
     window.addEventListener('scroll', updateDots);
     updateDots();
   </script>
+  <script>
+  const aboutModal = document.getElementById('aboutModal');
+  const openAboutModal = document.getElementById('openAboutModal');
+  const closeAboutModal = document.getElementById('closeAboutModal');
+  const closeAboutModalBtn = document.getElementById('closeAboutModalBtn');
+
+  function openModal() {
+    aboutModal.classList.add('is-open');
+    aboutModal.setAttribute('aria-hidden', 'false');
+  }
+
+  function closeModal() {
+    aboutModal.classList.remove('is-open');
+    aboutModal.setAttribute('aria-hidden', 'true');
+  }
+
+  if (openAboutModal) openAboutModal.addEventListener('click', openModal);
+  if (closeAboutModal) closeAboutModal.addEventListener('click', closeModal);
+  if (closeAboutModalBtn) closeAboutModalBtn.addEventListener('click', closeModal);
+
+  document.addEventListener('keydown', function (event) {
+    if (event.key === 'Escape') closeModal();
+  });
+</script>
 </body>
 </html>

@@ -197,25 +197,29 @@
 .video-shell {
   width: 100%;
   max-width: 1280px;
-  margin: -30px auto 0;
+  margin: -90px auto 0;
   position: relative;
   z-index: 5;
 
-  /* achtergrond */
-  background: url('background-setlist.jpg') center / cover no-repeat;
   overflow: hidden;
 }
+.release-bg {
+  position: relative;
+  background: url('background-setlist.jpg') center center / cover no-repeat;
+}
 
-
-.video-shell::before {
+.release-bg::before {
   content: "";
   position: absolute;
   inset: 0;
 
-  /* 👇 HIER regel je de donkerte */
-  background: rgba(0, 0, 0, 0.40);
+  background: rgba(0, 0, 0, 0.55); /* tweak hier */
 
   z-index: 1;
+}
+.release-bg > * {
+  position: relative;
+  z-index: 2;
 }
 .sound-btn {
   display: inline-block;
@@ -465,7 +469,7 @@
     </div>
   </section>
 
-<section class="panel" id="release">
+<section class="panel release-bg" id="release">
   <div class="container video-container">
 
     <div class="video-shell">

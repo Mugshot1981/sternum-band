@@ -686,24 +686,51 @@
        ABOUT
        Grote foto boven, tekst eronder
        ========================= -->
-  <section class="panel about-panel" id="about">
-    <div class="container">
-      <h2>About</h2>
+<section class="panel about-panel" id="about">
+  <div class="container">
+    <h2>About</h2>
 
-      <div class="about-stack">
-        <div class="about-image-large">
-          <img src="sternum1.png" alt="Sternum band">
-        </div>
+    <div class="about-stack">
+      <div class="about-image-large">
+        <img src="sternum1.png" alt="Sternum band">
+      </div>
 
-        <div class="about-text">
-          <p>
-            Sternum is een opkomende metalband met een rauwe, moderne sound.
-            Strakke riffs, zware breakdowns en energieke live shows.
-          </p>
-        </div>
+      <div class="about-summary">
+        <p>
+          Sternum is een opkomende metalband met een rauwe, moderne sound, strakke riffs en energieke live shows.
+        </p>
+        <button class="read-more-btn" id="openAboutModal" type="button">LEES MEER</button>
       </div>
     </div>
-  </section>
+  </div>
+</section>
+
+<div class="about-modal" id="aboutModal" aria-hidden="true">
+  <div class="about-modal-backdrop" id="closeAboutModal"></div>
+
+  <div class="about-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="aboutModalTitle">
+    <button class="about-modal-close" id="closeAboutModalBtn" type="button" aria-label="Sluiten">×</button>
+
+    <h3 id="aboutModalTitle">About Sternum</h3>
+
+    <div class="about-modal-content">
+      <p>
+        Sternum is een opkomende metalband met een rauwe, moderne sound.
+        De band combineert strakke riffs, zware breakdowns en energieke live shows
+        tot een directe en intense liveset.
+      </p>
+
+      <p>
+        Met een donkere visuele stijl en een sterke focus op sfeer en performance
+        bouwt Sternum aan een eigen identiteit die zowel live als online herkenbaar is.
+      </p>
+
+      <p>
+        Deze website is het centrale punt voor releases, shows en nieuwe updates rond de band.
+      </p>
+    </div>
+  </div>
+</div>
 
   <!-- =========================
        FOOTER

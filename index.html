@@ -97,46 +97,49 @@ a {
     );
   pointer-events: none;
 }
-
 .hero-content {
-  position: relative;
+  position: absolute;
+  inset: 0;
   z-index: 2;
 }
 
 /* METAL BUTTON */
 
 .metal-btn {
+  position: absolute;
+  left: 50%;
+  top: 78%;
+  transform: translate(-50%, -50%);
+
   padding: 14px 36px;
+  min-width: 170px;
 
   font-family: 'Bebas Neue', sans-serif;
   font-size: 20px;
   letter-spacing: 2px;
+  line-height: 1.1;
+  text-align: center;
 
   color: #ffffff;
-  background: rgba(0, 0, 0, 0.7);
-
-  border: 1px solid rgba(255,255,255,0.2);
+  background: rgba(0, 0, 0, 0.72);
+  border: 1px solid rgba(255,255,255,0.18);
 
   backdrop-filter: blur(6px);
-
   text-shadow: 0 0 8px rgba(0,0,0,0.8);
 
-  transition: all 0.2s ease;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease, transform 0.2s ease;
   cursor: pointer;
-  position: absolute;
-top: 65%;
-left: 50%;
-transform: translate(-50%, -50%);
 }
 
 .metal-btn:hover {
   border-color: var(--accent);
   box-shadow: 0 0 15px rgba(139, 0, 0, 0.6);
-  transform: translateY(-2px);
+  background: rgba(0, 0, 0, 0.8);
+  transform: translate(-50%, calc(-50% - 2px));
 }
 
 .metal-btn:active {
-  transform: translateY(0);
+  transform: translate(-50%, -50%);
 }
 
 /* CARDS */

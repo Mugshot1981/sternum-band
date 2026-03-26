@@ -368,38 +368,92 @@
       z-index: 2;
     }
 
-    .shows-list {
-      background: var(--bg-soft);
-      border: 1px solid var(--border);
-      box-shadow:
-        var(--shadow),
-        0 0 10px rgba(139, 0, 0, 0.08);
-    }
+  /* TOUR STYLE SHOWS */
+.tour-list {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
 
-    .show {
-      display: grid;
-      grid-template-columns: 120px 1fr;
-      gap: 16px;
-      padding: 18px 22px;
-      border-bottom: 1px solid var(--border);
-    }
+.tour-row {
+  display: grid;
+  grid-template-columns: 120px 1fr 120px;
+  gap: 24px;
+  align-items: center;
 
-    .show:last-child {
-      border-bottom: none;
-    }
+  padding: 24px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
 
-    .show-date {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 28px;
-      letter-spacing: 1px;
-      color: var(--text);
-    }
+.tour-date {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  line-height: 1;
+}
 
-    .show-place {
-      font-size: 18px;
-      color: var(--text-soft);
-    }
+.tour-day {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 54px;
+  letter-spacing: 1px;
+  color: #ffffff;
+}
 
+.tour-month {
+  margin-top: 6px;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 18px;
+  letter-spacing: 2px;
+  color: var(--accent-hover);
+}
+
+.tour-info {
+  min-width: 0;
+}
+
+.tour-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 34px;
+  letter-spacing: 1.5px;
+  color: #ffffff;
+}
+
+.tour-meta {
+  margin-top: 6px;
+  font-size: 17px;
+  line-height: 1.5;
+  color: var(--text-soft);
+}
+
+.tour-action {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.tour-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 92px;
+  padding: 10px 16px;
+
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 17px;
+  letter-spacing: 1.2px;
+
+  color: #ffffff;
+  border: 1px solid rgba(255,255,255,0.16);
+  background: rgba(0,0,0,0.35);
+
+  transition: border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+}
+
+.tour-btn:hover {
+  border-color: var(--accent);
+  background: rgba(0,0,0,0.55);
+  box-shadow: 0 0 16px rgba(139,0,0,0.22);
+}
     /* =========================
        9. ABOUT
        Grote foto boven, tekst eronder

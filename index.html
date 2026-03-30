@@ -273,6 +273,32 @@
   position: relative;
 }
 
+.about-image-large {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow:
+        0 40px 100px rgba(0, 0, 0, 0.9),
+        0 0 40px rgba(139, 0, 0, 0.15);
+}
+
+/* hover systeem */
+.about-hover {
+  cursor: pointer;
+}
+
+.about-overlay {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.about-person {
+  position: relative;
+}
+
 .about-person span {
   position: absolute;
   bottom: 16px;
@@ -292,7 +318,7 @@
 .about-person:hover span {
   opacity: 1;
   transform: translateX(-50%) translateY(0);
-}   
+}
     .metal-btn {
       position: absolute;
       left: 50%;

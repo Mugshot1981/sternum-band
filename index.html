@@ -1246,11 +1246,11 @@
                 sternumPlayer.unMute();
                 sternumPlayer.setVolume(100);
                 sternumPlayer.playVideo();
-                soundButton.textContent = 'SOUND OFF';
+            soundButton.innerHTML = '<span class="sound-icon">🔊</span>';
                 isMuted = false;
               } else {
                 sternumPlayer.mute();
-                soundButton.textContent = 'SOUND ON';
+                soundButton.innerHTML = '<span class="sound-icon">🔇</span>';
                 isMuted = true;
               }
             });

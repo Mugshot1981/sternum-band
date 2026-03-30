@@ -1028,8 +1028,24 @@
           playlist: '8SoVOSPKfFM'
         },
         events: {
-          onReady: function () {
-            const btn = document.getElementById('soundToggle');
+       onReady: function () {
+  const btn = document.getElementById('soundToggle');
+
+  // VIDEO SWITCH LOGIC
+  const videoButtons = document.querySelectorAll('.video-btn');
+
+  videoButtons.forEach(button => {
+    button.addEventListener('click', function () {
+      const videoId = this.getAttribute('data-video');
+
+      if (!sternumPlayer) return;
+
+      sternumPlayer.loadVideoById(videoId);
+
+      videoButtons.forEach(b => b.classList.remove('active'));
+      this.classList.add('active');
+    });
+  });
 
             btn.addEventListener('click', function () {
               if (!sternumPlayer) return;

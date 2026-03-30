@@ -247,6 +247,52 @@
       z-index: 2;
     }
 
+
+ .about-image-large {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow:
+    0 40px 100px rgba(0, 0, 0, 0.9),
+    0 0 40px rgba(139, 0, 0, 0.15);
+}
+
+.about-hover {
+  cursor: pointer;
+}
+
+.about-overlay {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.about-person {
+  position: relative;
+}
+
+.about-person span {
+  position: absolute;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%) translateY(10px);
+  padding: 8px 12px;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 16px;
+  letter-spacing: 1.2px;
+  background: rgba(0,0,0,0.7);
+  border: 1px solid rgba(255,255,255,0.15);
+  opacity: 0;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.about-person:hover span {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}   
     .metal-btn {
       position: absolute;
       left: 50%;
@@ -1200,8 +1246,26 @@
       <h2>About</h2>
 
       <div class="about-stack">
-        <div class="about-image-large">
+              <div class="about-image-large about-hover">
           <img src="sternum1.png" alt="Sternum band">
+
+          <div class="about-overlay">
+            <div class="about-person">
+              <span>Nathan — Bass</span>
+            </div>
+            <div class="about-person">
+              <span>Bas — Guitar</span>
+            </div>
+            <div class="about-person">
+              <span>Luna — Vocals</span>
+            </div>
+            <div class="about-person">
+              <span>Minck — Drums</span>
+            </div>
+            <div class="about-person">
+              <span>Stijn — Guitar</span>
+            </div>
+          </div>
         </div>
 
         <div class="about-summary">

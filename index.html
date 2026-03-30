@@ -341,27 +341,33 @@
   background: rgba(0, 0, 0, 0.52);
   border: 1px solid rgba(255, 255, 255, 0.08);
 }
-
 .sound-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   margin: 0;
-  width: 46px;
+  width: 52px;
   height: 42px;
-  font-size: 20px;
+  padding: 0;
   background: rgba(0, 0, 0, 0.86);
   border: 1px solid rgba(255, 255, 255, 0.16);
+  color: #ffffff;
   cursor: pointer;
   transition: all 0.2s ease;
+  flex-shrink: 0;
 }
-.sound-icon {
-  pointer-events: none;
-}
+
 .sound-btn:hover {
   border-color: var(--accent);
   box-shadow: 0 0 16px rgba(139, 0, 0, 0.28);
   background: rgba(0, 0, 0, 0.92);
+}
+
+.sound-icon {
+  width: 20px;
+  height: 20px;
+  display: block;
+  pointer-events: none;
 }
 
 .video-selector {

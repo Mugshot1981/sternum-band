@@ -466,14 +466,20 @@
       position: relative;
       background: url('background-setlist.jpg') center center / cover no-repeat;
     }
-
-    .shows-bg::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.68);
-      z-index: 1;
-    }
+.shows-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.88) 0%,
+      rgba(0, 0, 0, 0.78) 35%,
+      rgba(0, 0, 0, 0.55) 70%,
+      rgba(0, 0, 0, 0.65) 100%
+    );
+  z-index: 1;
+}
 
     .shows-bg .container {
       position: relative;

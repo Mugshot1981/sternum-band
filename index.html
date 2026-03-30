@@ -5,13 +5,9 @@
   <title>Sternum</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
   <style>
-    /* =========================
-       1. ROOT / BASISKLEUREN
-       ========================= */
     :root {
       --bg: #0b0b0b;
       --bg-soft: #111111;
@@ -30,9 +26,6 @@
       --shadow: 0 10px 30px rgba(0, 0, 0, 0.28);
     }
 
-    /* =========================
-       2. RESET / BASIS
-       ========================= */
     * {
       box-sizing: border-box;
     }
@@ -72,9 +65,6 @@
       text-decoration: none;
     }
 
-    /* =========================
-       3. FIXED TOP NAV
-       ========================= */
     .top-nav {
       position: fixed;
       top: 0;
@@ -94,6 +84,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
+      gap: 24px;
     }
 
     .nav-logo {
@@ -111,24 +102,41 @@
       display: flex;
       align-items: center;
       gap: 22px;
+      flex-wrap: wrap;
     }
 
-    .nav-links a {
+    .nav-links a,
+    .booking-trigger {
       font-family: 'Bebas Neue', sans-serif;
       font-size: 18px;
       letter-spacing: 1.5px;
       color: rgba(255, 255, 255, 0.82);
-      transition: color 0.2s ease, text-shadow 0.2s ease;
+      transition: color 0.2s ease, text-shadow 0.2s ease, border-color 0.2s ease, background 0.2s ease;
     }
 
-    .nav-links a:hover {
+    .nav-links a:hover,
+    .booking-trigger:hover {
       color: #ffffff;
       text-shadow: 0 0 10px rgba(139, 0, 0, 0.55);
     }
 
-    /* =========================
-       4. SCROLL DOTS
-       ========================= */
+    .booking-trigger {
+      appearance: none;
+      border: 1px solid rgba(139, 0, 0, 0.7);
+      background: rgba(139, 0, 0, 0.16);
+      color: #ffffff;
+      padding: 10px 16px;
+      line-height: 1;
+      cursor: pointer;
+      text-shadow: none;
+    }
+
+    .booking-trigger:hover {
+      background: rgba(139, 0, 0, 0.28);
+      border-color: rgba(181, 43, 43, 0.95);
+      box-shadow: 0 0 14px rgba(139, 0, 0, 0.22);
+    }
+
     .scroll-dots {
       position: fixed;
       right: 20px;
@@ -154,9 +162,6 @@
       background: white;
     }
 
-    /* =========================
-       5. ALGEMENE PANEL STRUCTUUR
-       ========================= */
     .panel {
       min-height: 100vh;
       width: 100%;
@@ -179,9 +184,6 @@
       align-items: stretch;
     }
 
-    /* =========================
-       6. HERO
-       ========================= */
     .hero {
       position: relative;
       padding: 0;
@@ -245,55 +247,52 @@
       transform: translate(-50%, -50%);
     }
 
-    /* =========================
-       7. RELEASE VIDEO
-       ========================= */
-#media {
-  scroll-margin-top: 110px;
-}
+    #media {
+      scroll-margin-top: 110px;
+    }
 
-.media-panel {
-  position: relative;
-  overflow: hidden;
-}
+    .media-panel {
+      position: relative;
+      overflow: hidden;
+    }
 
-.media-bg {
-  position: absolute;
-  inset: 0;
-  background:
-    linear-gradient(
-      to bottom,
-      rgba(0, 0, 0, 0.72),
-      rgba(0, 0, 0, 0.82)
-    ),
-    url('media.jpg') center center / cover no-repeat;
-  z-index: 1;
-}
+    .media-bg {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(
+          to bottom,
+          rgba(0, 0, 0, 0.62),
+          rgba(0, 0, 0, 0.80)
+        ),
+        url('media.jpg') center center / cover no-repeat;
+      z-index: 1;
+    }
 
-.media-container {
-  position: relative;
-  z-index: 2;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding-top: 48px;
-  padding-bottom: 48px;
-}
+    .media-container {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 48px;
+      padding-bottom: 48px;
+    }
 
-.media-container h2 {
-  width: 100%;
-  max-width: 980px;
-  margin: 0 0 20px 0;
-}
+    .media-container h2 {
+      width: 100%;
+      max-width: 980px;
+      margin: 0 0 20px 0;
+    }
 
-.video-shell {
-  width: 100%;
-  max-width: 980px;
-  margin: 0 auto;
-  position: relative;
-  z-index: 5;
-  overflow: visible;
-}
+    .video-shell {
+      width: 100%;
+      max-width: 980px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 5;
+      overflow: visible;
+    }
 
     .sound-btn {
       display: inline-block;
@@ -316,16 +315,17 @@
       background: rgba(0, 0, 0, 0.9);
     }
 
-  .video-wrapper #sternum-player iframe {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 108%;
-  height: 108%;
-  transform: translate(-50%, -50%);
-  border: none;
-  display: block;
-}
+    .video-wrapper {
+      position: relative;
+      width: 100%;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: #000;
+      box-shadow:
+        0 30px 80px rgba(0, 0, 0, 0.8),
+        0 0 40px rgba(139, 0, 0, 0.15);
+      overflow: hidden;
+      z-index: 2;
+    }
 
     .video-wrapper::before {
       content: "";
@@ -344,8 +344,8 @@
       position: absolute;
       top: 50%;
       left: 50%;
-      width: 120%;
-      height: 120%;
+      width: 108%;
+      height: 108%;
       transform: translate(-50%, -50%);
       border: none;
       display: block;
@@ -357,9 +357,43 @@
         0 0 60px rgba(139, 0, 0, 0.3);
     }
 
-    /* =========================
-       8. SHOWS / TOUR STYLE
-       ========================= */
+    .video-selector {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 16px;
+      justify-content: flex-start;
+    }
+
+    .video-btn {
+      padding: 9px 14px;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 15px;
+      letter-spacing: 1.3px;
+      background: rgba(0, 0, 0, 0.78);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      color: #fff;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .video-btn:hover {
+      border-color: var(--accent);
+      box-shadow: 0 0 10px rgba(139, 0, 0, 0.4);
+    }
+
+    .video-btn.active {
+      border-color: var(--accent);
+      background: rgba(139, 0, 0, 0.2);
+    }
+
+    .video-btn:disabled {
+      opacity: 0.45;
+      cursor: default;
+      box-shadow: none;
+      border-color: rgba(255, 255, 255, 0.12);
+    }
+
     .shows-bg {
       position: relative;
       background: url('background-setlist.jpg') center center / cover no-repeat;
@@ -386,64 +420,61 @@
       border-top: 1px solid rgba(255, 255, 255, 0.08);
     }
 
-   .tour-row {
-  display: grid;
-  grid-template-columns: 120px 1fr;
-  gap: 28px;
-  align-items: center;
-  padding: 24px 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-}
+    .tour-row {
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      gap: 28px;
+      align-items: center;
+      padding: 24px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
 
-.tour-date {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  line-height: 1;
-  flex-shrink: 0;
-}
+    .tour-date {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      line-height: 1;
+      flex-shrink: 0;
+    }
 
-.tour-day {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 58px;
-  letter-spacing: 1px;
-  color: #ffffff;
-}
+    .tour-day {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 58px;
+      letter-spacing: 1px;
+      color: #ffffff;
+    }
 
-.tour-month {
-  margin-top: 6px;
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 17px;
-  letter-spacing: 2px;
-  color: var(--accent-hover);
-}
+    .tour-month {
+      margin-top: 6px;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 17px;
+      letter-spacing: 2px;
+      color: var(--accent-hover);
+    }
 
-.tour-year {
-  margin-top: 4px;
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 15px;
-  letter-spacing: 1.5px;
-  color: rgba(255,255,255,0.55);
-}
+    .tour-year {
+      margin-top: 4px;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 15px;
+      letter-spacing: 1.5px;
+      color: rgba(255,255,255,0.55);
+    }
 
-.tour-title {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 38px;
-  letter-spacing: 1.2px;
-  color: #ffffff;
-  line-height: 1;
-}
+    .tour-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 38px;
+      letter-spacing: 1.2px;
+      color: #ffffff;
+      line-height: 1;
+    }
 
-.tour-meta {
-  margin-top: 8px;
-  font-size: 18px;
-  line-height: 1.45;
-  color: var(--text-soft);
-}
+    .tour-meta {
+      margin-top: 8px;
+      font-size: 18px;
+      line-height: 1.45;
+      color: var(--text-soft);
+    }
 
-    /* =========================
-       9. ABOUT
-       ========================= */
     .about-panel {
       align-items: flex-start;
       padding-top: 120px;
@@ -514,19 +545,18 @@
       background: rgba(0, 0, 0, 0.9);
     }
 
-    /* About modal */
-    .about-modal {
+    .modal {
       position: fixed;
       inset: 0;
       z-index: 3000;
       display: none;
     }
 
-    .about-modal.is-open {
+    .modal.is-open {
       display: block;
     }
 
-    .about-modal-backdrop {
+    .modal-backdrop {
       position: absolute;
       inset: 0;
       background: rgba(0, 0, 0, 0.78);
@@ -534,7 +564,7 @@
       -webkit-backdrop-filter: blur(6px);
     }
 
-    .about-modal-dialog {
+    .modal-dialog {
       position: relative;
       width: min(760px, calc(100% - 32px));
       margin: 10vh auto 0;
@@ -547,25 +577,25 @@
       z-index: 2;
     }
 
-    .about-modal-dialog h3 {
+    .modal-dialog h3 {
       margin: 0 0 18px 0;
       font-size: 34px;
       color: var(--text);
     }
 
-    .about-modal-content {
+    .modal-content {
       display: flex;
       flex-direction: column;
       gap: 16px;
     }
 
-    .about-modal-content p {
+    .modal-content p {
       font-size: 18px;
       line-height: 1.75;
       color: var(--text-soft);
     }
 
-    .about-modal-close {
+    .modal-close {
       position: absolute;
       top: 10px;
       right: 14px;
@@ -577,13 +607,79 @@
       cursor: pointer;
     }
 
-    .about-modal-close:hover {
+    .modal-close:hover {
       color: #ffffff;
     }
 
-    /* =========================
-       10. FOOTER
-       ========================= */
+    .booking-form {
+      display: grid;
+      gap: 14px;
+      margin-top: 8px;
+    }
+
+    .booking-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    .booking-form label {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      font-size: 14px;
+      color: var(--text-soft);
+    }
+
+    .booking-form input,
+    .booking-form textarea {
+      width: 100%;
+      background: #0a0a0a;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      color: #ffffff;
+      padding: 14px 14px;
+      font-family: 'Inter', sans-serif;
+      font-size: 15px;
+      outline: none;
+    }
+
+    .booking-form input:focus,
+    .booking-form textarea:focus {
+      border-color: rgba(139, 0, 0, 0.8);
+      box-shadow: 0 0 0 1px rgba(139, 0, 0, 0.25);
+    }
+
+    .booking-form textarea {
+      min-height: 160px;
+      resize: vertical;
+    }
+
+    .booking-submit {
+      justify-self: start;
+      padding: 12px 22px;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 18px;
+      letter-spacing: 1.5px;
+      color: #ffffff;
+      background: rgba(139, 0, 0, 0.18);
+      border: 1px solid rgba(139, 0, 0, 0.72);
+      cursor: pointer;
+      transition: background 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .booking-submit:hover {
+      background: rgba(139, 0, 0, 0.28);
+      border-color: rgba(181, 43, 43, 0.95);
+      box-shadow: 0 0 14px rgba(139, 0, 0, 0.18);
+    }
+
+    .booking-note {
+      font-size: 13px;
+      line-height: 1.5;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+
     footer {
       width: 100%;
       text-align: center;
@@ -598,38 +694,6 @@
       margin: 8px 0;
     }
 
-.video-selector {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 16px;
-  justify-content: flex-start;
-}
-
-.video-btn {
-  padding: 9px 14px;
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 15px;
-  letter-spacing: 1.3px;
-  background: rgba(0,0,0,0.78);
-  border: 1px solid rgba(255,255,255,0.18);
-  color: #fff;
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
-.video-btn:hover {
-  border-color: var(--accent);
-  box-shadow: 0 0 10px rgba(139,0,0,0.4);
-}
-
-.video-btn.active {
-  border-color: var(--accent);
-  background: rgba(139,0,0,0.2);
-}
-
-    /* =========================
-       11. RESPONSIVE - TABLET
-       ========================= */
     @media (max-width: 1100px) {
       .panel {
         padding: 40px 20px;
@@ -661,9 +725,6 @@
       }
     }
 
-    /* =========================
-       12. RESPONSIVE - MOBILE
-       ========================= */
     @media (max-width: 768px) {
       html {
         scroll-snap-type: y proximity;
@@ -682,14 +743,18 @@
       }
 
       .nav-links {
-        gap: 14px;
-        flex-wrap: wrap;
+        gap: 12px;
         justify-content: flex-end;
       }
 
-      .nav-links a {
+      .nav-links a,
+      .booking-trigger {
         font-size: 16px;
         letter-spacing: 1px;
+      }
+
+      .booking-trigger {
+        padding: 9px 12px;
       }
 
       .panel {
@@ -762,25 +827,26 @@
         line-height: 1.6;
       }
 
-      .about-modal-dialog {
+      .modal-dialog {
         width: calc(100% - 20px);
         margin-top: 8vh;
         padding: 24px 18px 20px;
       }
 
-      .about-modal-dialog h3 {
+      .modal-dialog h3 {
         font-size: 28px;
       }
 
-      .about-modal-content p {
+      .modal-content p {
         font-size: 16px;
         line-height: 1.65;
       }
+
+      .booking-grid {
+        grid-template-columns: 1fr;
+      }
     }
 
-    /* =========================
-       13. RESPONSIVE - HEEL KLEIN
-       ========================= */
     @media (max-width: 420px) {
       .metal-btn {
         top: 86%;
@@ -805,9 +871,6 @@
 </head>
 <body>
 
-  <!-- =========================
-       FIXED NAVBAR
-       ========================= -->
   <nav class="top-nav">
     <div class="nav-inner">
       <a href="#top" class="nav-logo">
@@ -816,17 +879,14 @@
 
       <div class="nav-links">
         <a href="#top">Home</a>
-       <a href="#media">Media</a>
+        <a href="#media">Media</a>
         <a href="#shows">Shows</a>
         <a href="#about">About</a>
+        <button class="booking-trigger" id="openBookingModal" type="button">Booking</button>
       </div>
     </div>
   </nav>
 
-  <!-- =========================
-       SCROLL DOTS
-       hero / release / shows / about / footer
-       ========================= -->
   <div class="scroll-dots">
     <span></span>
     <span></span>
@@ -835,118 +895,103 @@
     <span></span>
   </div>
 
-  <!-- =========================
-       HERO
-       ========================= -->
   <section class="panel hero" id="top">
     <div class="hero-content">
-      <a href="#release" class="metal-btn">LISTEN NOW</a>
+      <a href="#media" class="metal-btn">LISTEN NOW</a>
     </div>
   </section>
 
-  <!-- =========================
-  MEDIA
-       ========================= -->
-  
-<section class="panel media-panel" id="media">
-  <div class="media-bg"></div>
+  <section class="panel media-panel" id="media">
+    <div class="media-bg"></div>
 
-  <div class="container media-container">
-    <h2>Media</h2>
+    <div class="container media-container">
+      <h2>Media</h2>
 
-    <div class="video-shell">
-      <button class="sound-btn" id="soundToggle" type="button">SOUND ON</button>
+      <div class="video-shell">
+        <button class="sound-btn" id="soundToggle" type="button">SOUND ON</button>
 
-    <div class="video-wrapper">
-  <div id="sternum-player"></div>
-</div>
+        <div class="video-wrapper">
+          <div id="sternum-player"></div>
+        </div>
 
-<div class="video-selector">
-  <button class="video-btn active" data-video="8SoVOSPKfFM">OFFICIAL</button>
-  <button class="video-btn" data-video="crqBlHuaXx8">LIVE 1</button>
-  <button class="video-btn" data-video="qXEczPrFfQ4">LIVE 2</button>
-  <button class="video-btn" data-video="">SESSION</button>
-</div>
+        <div class="video-selector">
+          <button class="video-btn active" data-video="8SoVOSPKfFM">OFFICIAL</button>
+          <button class="video-btn" data-video="crqBlHuaXx8">LIVE 1</button>
+          <button class="video-btn" data-video="qXEczPrFfQ4">LIVE 2</button>
+          <button class="video-btn" data-video="" disabled>SESSION</button>
+        </div>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-  <!-- =========================
-       SHOWS / TOUR STYLE
-       ========================= -->
- <section class="panel shows-bg" id="shows">
-  <div class="container">
-    <h2>Shows</h2>
+  <section class="panel shows-bg" id="shows">
+    <div class="container">
+      <h2>Shows</h2>
 
-    <div class="tour-list">
-
-      <div class="tour-row">
-        <div class="tour-date">
-          <span class="tour-day">19</span>
-          <span class="tour-month">NOV</span>
-          <span class="tour-year">'25</span>
+      <div class="tour-list">
+        <div class="tour-row">
+          <div class="tour-date">
+            <span class="tour-day">19</span>
+            <span class="tour-month">NOV</span>
+            <span class="tour-year">'25</span>
+          </div>
+          <div class="tour-info">
+            <div class="tour-title">Willemeen</div>
+            <div class="tour-meta">Arnhem · met Uncentered + DANA</div>
+          </div>
         </div>
-        <div class="tour-info">
-          <div class="tour-title">Willemeen</div>
-          <div class="tour-meta">Arnhem · met Uncentered + DANA</div>
+
+        <div class="tour-row">
+          <div class="tour-date">
+            <span class="tour-day">13</span>
+            <span class="tour-month">DEC</span>
+            <span class="tour-year">'25</span>
+          </div>
+          <div class="tour-info">
+            <div class="tour-title">Godfest — Willemeen</div>
+            <div class="tour-meta">Arnhem · line-up show</div>
+          </div>
+        </div>
+
+        <div class="tour-row">
+          <div class="tour-date">
+            <span class="tour-day">30</span>
+            <span class="tour-month">JAN</span>
+            <span class="tour-year">'26</span>
+          </div>
+          <div class="tour-info">
+            <div class="tour-title">Café Kroon</div>
+            <div class="tour-meta">Arnhem · met Baardvader · sold out</div>
+          </div>
+        </div>
+
+        <div class="tour-row">
+          <div class="tour-date">
+            <span class="tour-day">04</span>
+            <span class="tour-month">FEB</span>
+            <span class="tour-year">'26</span>
+          </div>
+          <div class="tour-info">
+            <div class="tour-title">Willemeen</div>
+            <div class="tour-meta">Arnhem · Blackout / Mokrypse / Sternum</div>
+          </div>
+        </div>
+
+        <div class="tour-row">
+          <div class="tour-date">
+            <span class="tour-day">21</span>
+            <span class="tour-month">MAR</span>
+            <span class="tour-year">'26</span>
+          </div>
+          <div class="tour-info">
+            <div class="tour-title">Nest Fest — Café Bosch</div>
+            <div class="tour-meta">Arnhem · met meerdere bands</div>
+          </div>
         </div>
       </div>
-
-      <div class="tour-row">
-        <div class="tour-date">
-          <span class="tour-day">13</span>
-          <span class="tour-month">DEC</span>
-          <span class="tour-year">'25</span>
-        </div>
-        <div class="tour-info">
-          <div class="tour-title">Godfest — Willemeen</div>
-          <div class="tour-meta">Arnhem · line-up show</div>
-        </div>
-      </div>
-
-      <div class="tour-row">
-        <div class="tour-date">
-          <span class="tour-day">30</span>
-          <span class="tour-month">JAN</span>
-          <span class="tour-year">'26</span>
-        </div>
-        <div class="tour-info">
-          <div class="tour-title">Café Kroon</div>
-          <div class="tour-meta">Arnhem · met Baardvader · sold out</div>
-        </div>
-      </div>
-
-      <div class="tour-row">
-        <div class="tour-date">
-          <span class="tour-day">04</span>
-          <span class="tour-month">FEB</span>
-          <span class="tour-year">'26</span>
-        </div>
-        <div class="tour-info">
-          <div class="tour-title">Willemeen</div>
-          <div class="tour-meta">Arnhem · Blackout / Mokrypse / Sternum</div>
-        </div>
-      </div>
-
-      <div class="tour-row">
-        <div class="tour-date">
-          <span class="tour-day">21</span>
-          <span class="tour-month">MAR</span>
-          <span class="tour-year">'26</span>
-        </div>
-        <div class="tour-info">
-          <div class="tour-title">Nest Fest — Café Bosch</div>
-          <div class="tour-meta">Arnhem · met meerdere bands</div>
-        </div>
-      </div>
-
     </div>
-  </div>
-</section>
+  </section>
 
-  <!-- =========================
-       ABOUT
-       ========================= -->
   <section class="panel about-panel" id="about">
     <div class="container">
       <h2>About</h2>
@@ -966,18 +1011,15 @@
     </div>
   </section>
 
-  <!-- =========================
-       ABOUT MODAL
-       ========================= -->
-  <div class="about-modal" id="aboutModal" aria-hidden="true">
-    <div class="about-modal-backdrop" id="closeAboutModal"></div>
+  <div class="modal" id="aboutModal" aria-hidden="true">
+    <div class="modal-backdrop" data-close-modal="aboutModal"></div>
 
-    <div class="about-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="aboutModalTitle">
-      <button class="about-modal-close" id="closeAboutModalBtn" type="button" aria-label="Sluiten">×</button>
+    <div class="modal-dialog" role="dialog" aria-modal="true" aria-labelledby="aboutModalTitle">
+      <button class="modal-close" data-close-modal="aboutModal" type="button" aria-label="Sluiten">×</button>
 
       <h3 id="aboutModalTitle">About Sternum</h3>
 
-      <div class="about-modal-content">
+      <div class="modal-content">
         <p>
           Sternum is een opkomende metalband met een rauwe, moderne sound.
           De band combineert strakke riffs, zware breakdowns en energieke live shows
@@ -996,9 +1038,59 @@
     </div>
   </div>
 
-  <!-- =========================
-       FOOTER
-       ========================= -->
+  <div class="modal" id="bookingModal" aria-hidden="true">
+    <div class="modal-backdrop" data-close-modal="bookingModal"></div>
+
+    <div class="modal-dialog" role="dialog" aria-modal="true" aria-labelledby="bookingModalTitle">
+      <button class="modal-close" data-close-modal="bookingModal" type="button" aria-label="Sluiten">×</button>
+
+      <h3 id="bookingModalTitle">Booking</h3>
+
+      <div class="modal-content">
+        <p>
+          Voor boekingen en show-aanvragen kun je hieronder direct een bericht voorbereiden aan info@sternum-band.nl.
+        </p>
+
+        <form class="booking-form" id="bookingForm">
+          <div class="booking-grid">
+            <label>
+              Naam
+              <input type="text" name="name" required>
+            </label>
+
+            <label>
+              E-mail
+              <input type="email" name="email" required>
+            </label>
+          </div>
+
+          <div class="booking-grid">
+            <label>
+              Onderwerp
+              <input type="text" name="subject" required>
+            </label>
+
+            <label>
+              Datum / locatie
+              <input type="text" name="details" placeholder="Bijv. 12 juni 2026 / Arnhem">
+            </label>
+          </div>
+
+          <label>
+            Bericht
+            <textarea name="message" required></textarea>
+          </label>
+
+          <button class="booking-submit" type="submit">OPEN MAIL</button>
+
+          <p class="booking-note">
+            Deze versie gebruikt een mailto-fallback. Voor echte automatische verzending zonder mailprogramma heb je later nog een form-service of backend nodig.
+          </p>
+        </form>
+      </div>
+    </div>
+  </div>
+
   <section class="panel footer-panel">
     <footer>
       <p>Follow Sternum</p>
@@ -1006,9 +1098,6 @@
     </footer>
   </section>
 
-  <!-- =========================
-       YOUTUBE IFRAME API
-       ========================= -->
   <script src="https://www.youtube.com/iframe_api"></script>
   <script>
     let sternumPlayer = null;
@@ -1016,7 +1105,7 @@
 
     function onYouTubeIframeAPIReady() {
       sternumPlayer = new YT.Player('sternum-player', {
-  videoId: '8SoVOSPKfFM',
+        videoId: '8SoVOSPKfFM',
         playerVars: {
           autoplay: 1,
           mute: 1,
@@ -1028,37 +1117,34 @@
           playlist: '8SoVOSPKfFM'
         },
         events: {
-       onReady: function () {
-  const btn = document.getElementById('soundToggle');
+          onReady: function () {
+            const soundButton = document.getElementById('soundToggle');
+            const videoButtons = document.querySelectorAll('.video-btn');
 
-  // VIDEO SWITCH LOGIC
-  const videoButtons = document.querySelectorAll('.video-btn');
+            videoButtons.forEach((button) => {
+              button.addEventListener('click', function () {
+                const videoId = this.getAttribute('data-video');
+                if (!sternumPlayer || !videoId) return;
 
-  videoButtons.forEach(button => {
-    button.addEventListener('click', function () {
-      const videoId = this.getAttribute('data-video');
+                sternumPlayer.loadVideoById(videoId);
 
-      if (!sternumPlayer) return;
+                videoButtons.forEach((b) => b.classList.remove('active'));
+                this.classList.add('active');
+              });
+            });
 
-      sternumPlayer.loadVideoById(videoId);
-
-      videoButtons.forEach(b => b.classList.remove('active'));
-      this.classList.add('active');
-    });
-  });
-
-            btn.addEventListener('click', function () {
+            soundButton.addEventListener('click', function () {
               if (!sternumPlayer) return;
 
               if (isMuted) {
                 sternumPlayer.unMute();
                 sternumPlayer.setVolume(100);
                 sternumPlayer.playVideo();
-                btn.textContent = 'SOUND OFF';
+                soundButton.textContent = 'SOUND OFF';
                 isMuted = false;
               } else {
                 sternumPlayer.mute();
-                btn.textContent = 'SOUND ON';
+                soundButton.textContent = 'SOUND ON';
                 isMuted = true;
               }
             });
@@ -1068,9 +1154,6 @@
     }
   </script>
 
-  <!-- =========================
-       SCROLL DOTS ACTIVE STATE
-       ========================= -->
   <script>
     const panels = document.querySelectorAll('.panel');
     const dots = document.querySelectorAll('.scroll-dots span');
@@ -1100,31 +1183,71 @@
     updateDots();
   </script>
 
-  <!-- =========================
-       ABOUT MODAL OPEN/CLOSE
-       ========================= -->
   <script>
+    function openModal(modal) {
+      modal.classList.add('is-open');
+      modal.setAttribute('aria-hidden', 'false');
+    }
+
+    function closeModal(modal) {
+      modal.classList.remove('is-open');
+      modal.setAttribute('aria-hidden', 'true');
+    }
+
     const aboutModal = document.getElementById('aboutModal');
+    const bookingModal = document.getElementById('bookingModal');
     const openAboutModal = document.getElementById('openAboutModal');
-    const closeAboutModal = document.getElementById('closeAboutModal');
-    const closeAboutModalBtn = document.getElementById('closeAboutModalBtn');
+    const openBookingModal = document.getElementById('openBookingModal');
 
-    function openModal() {
-      aboutModal.classList.add('is-open');
-      aboutModal.setAttribute('aria-hidden', 'false');
+    if (openAboutModal) {
+      openAboutModal.addEventListener('click', () => openModal(aboutModal));
     }
 
-    function closeModal() {
-      aboutModal.classList.remove('is-open');
-      aboutModal.setAttribute('aria-hidden', 'true');
+    if (openBookingModal) {
+      openBookingModal.addEventListener('click', () => openModal(bookingModal));
     }
 
-    if (openAboutModal) openAboutModal.addEventListener('click', openModal);
-    if (closeAboutModal) closeAboutModal.addEventListener('click', closeModal);
-    if (closeAboutModalBtn) closeAboutModalBtn.addEventListener('click', closeModal);
+    document.querySelectorAll('[data-close-modal]').forEach((button) => {
+      button.addEventListener('click', function () {
+        const modalId = this.getAttribute('data-close-modal');
+        const modal = document.getElementById(modalId);
+        if (modal) closeModal(modal);
+      });
+    });
 
     document.addEventListener('keydown', function (event) {
-      if (event.key === 'Escape') closeModal();
+      if (event.key === 'Escape') {
+        if (aboutModal.classList.contains('is-open')) closeModal(aboutModal);
+        if (bookingModal.classList.contains('is-open')) closeModal(bookingModal);
+      }
+    });
+  </script>
+
+  <script>
+    const bookingForm = document.getElementById('bookingForm');
+
+    bookingForm.addEventListener('submit', function (event) {
+      event.preventDefault();
+
+      const name = bookingForm.elements['name'].value.trim();
+      const email = bookingForm.elements['email'].value.trim();
+      const subject = bookingForm.elements['subject'].value.trim();
+      const details = bookingForm.elements['details'].value.trim();
+      const message = bookingForm.elements['message'].value.trim();
+
+      const fullSubject = subject || 'Booking aanvraag Sternum';
+      const body =
+`Naam: ${name}
+E-mail: ${email}
+Datum / locatie: ${details}
+
+Bericht:
+${message}`;
+
+      const mailtoLink =
+        `mailto:info@sternum-band.nl?subject=${encodeURIComponent(fullSubject)}&body=${encodeURIComponent(body)}`;
+
+      window.location.href = mailtoLink;
     });
   </script>
 </body>

@@ -749,19 +749,23 @@
       -webkit-backdrop-filter: blur(6px);
     }
 
-    .modal-dialog {
-      position: relative;
-      width: min(760px, calc(100% - 32px));
-      margin: 10vh auto 0;
-      background: #0f0f0f;
-      border: 1px solid var(--border);
-      box-shadow:
-        0 30px 90px rgba(0, 0, 0, 0.85),
-        0 0 30px rgba(139, 0, 0, 0.18);
-      padding: 32px 28px 28px;
-      z-index: 2;
-    }
+.modal-dialog {
+  position: relative;
+  width: min(760px, calc(100% - 32px));
+  max-height: 80vh;              /* KEY */
+  overflow-y: auto;              /* KEY */
 
+  margin: 10vh auto 0;
+  background: #0f0f0f;
+  border: 1px solid var(--border);
+
+  box-shadow:
+    0 30px 90px rgba(0, 0, 0, 0.85),
+    0 0 30px rgba(139, 0, 0, 0.18);
+
+  padding: 32px 28px 28px;
+  z-index: 2;
+}
     .modal-dialog h3 {
       margin: 0 0 18px 0;
       font-size: 34px;
@@ -1298,29 +1302,34 @@
       <h3 id="aboutModalTitle">About Sternum</h3>
 
       <div class="modal-content">
-<p>
-Sternum is een jonge metalband uit Arnhem, bestaande uit Bas (gitaar), Luna (vocals), Minck (drums), Stijn (gitaar) en Nathan (bas). Ondanks hun leeftijd maakt de band al volledig eigen muziek, met invloeden uit moderne metalbands zoals Slipknot en Kittie.
-</p>
+<div class="modal-content">
 
-<p>
-De band ontstond toen Bas, Luna en Minck elkaar leerden kennen tijdens een buitenschools muziektraject. Wat begon als een klein project groeide al snel uit tot een serieuze band. Later sloten Stijn en Nathan aan, waarmee Sternum compleet werd. Sindsdien wordt er wekelijks gerepeteerd en gewerkt aan nieuw materiaal.
-</p>
+  <h4 class="about-heading">DE BAND</h4>
+  <p>
+    Sternum is een jonge metalband uit Arnhem, bestaande uit Bas (gitaar), Luna (vocals), Minck (drums), Stijn (gitaar) en Nathan (bas). Ondanks hun leeftijd maakt de band al volledig eigen muziek, met invloeden uit moderne metalbands zoals Slipknot en Kittie.
+  </p>
 
-<p>
-De nummers ontstaan vaak vanuit gitaarriffs van Bas en Stijn. Tijdens repetities bouwen ze die samen uit met drums en bas, waarna Luna haar eigen teksten en vocalen toevoegt. De muziek is rauw, energiek en direct, met ruimte voor experiment en eigen invulling.
-</p>
+  <h4 class="about-heading">ONTSTAAN</h4>
+  <p>
+    De band ontstond toen Bas, Luna en Minck elkaar leerden kennen tijdens een buitenschools muziektraject. Wat begon als een klein project groeide al snel uit tot een serieuze band. Later sloten Stijn en Nathan aan, waarmee Sternum compleet werd. Sindsdien wordt er wekelijks gerepeteerd en gewerkt aan nieuw materiaal.
+  </p>
 
-<p>
-Via het ontwikkeltraject Popspot kreeg Sternum de kans om zich verder te verdiepen in zowel muziek als het spelen van live shows. Ze leerden daar niet alleen beter samen spelen, maar ook hoe je als band optredens regelt en jezelf presenteert. In de afgelopen periode stonden ze op podia zoals Willemeen, Musis, Café Bosch en Gigant in Apeldoorn.
-</p>
+  <h4 class="about-heading">MUZIEK</h4>
+  <p>
+    De nummers ontstaan vaak vanuit gitaarriffs van Bas en Stijn. Tijdens repetities bouwen ze die samen uit met drums en bas, waarna Luna haar eigen teksten en vocalen toevoegt. De muziek is rauw, energiek en direct, met ruimte voor experiment en eigen invulling.
+  </p>
 
-<p>
-Tijdens dit traject nam de band hun eerste EP <strong>Porcelain Eyes</strong> op bij Lil Heaven Studios in Arnhem. Het opnemen van hun eigen muziek was een belangrijke stap, en het moment dat de nummers online kwamen voelde voor de band als een echte mijlpaal.
-</p>
+  <h4 class="about-heading">ONTWIKKELING</h4>
+  <p>
+    Via het ontwikkeltraject Popspot kreeg Sternum de kans om zich verder te verdiepen in zowel muziek als live optredens. Ze leerden daar niet alleen beter samen spelen, maar ook hoe je als band optredens regelt en jezelf presenteert. In de afgelopen periode stonden ze op podia zoals Willemeen, Musis, Café Bosch en Gigant in Apeldoorn.
+  </p>
 
-<p>
-Sternum is nog volop in ontwikkeling, maar staat inmiddels stevig op het podium en blijft werken aan nieuwe muziek en live shows.
-</p>
+  <h4 class="about-heading">EP</h4>
+  <p>
+    Tijdens dit traject nam de band hun eerste EP <strong>Porcelain Eyes</strong> op bij Lil Heaven Studios in Arnhem. Het opnemen van hun eigen muziek was een belangrijke stap, en het moment dat de nummers online kwamen voelde als een echte mijlpaal.
+  </p>
+
+</div>
       </div>
     </div>
   </div>

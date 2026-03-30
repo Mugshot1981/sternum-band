@@ -248,16 +248,41 @@
     /* =========================
        7. RELEASE VIDEO
        ========================= */
-    #release {
-      scroll-margin-top: 110px;
-    }
+#media {
+  scroll-margin-top: 110px;
+}
 
-    .video-container {
-      display: flex;
-      justify-content: center;
-      position: relative;
-      z-index: 5;
-    }
+.media-panel {
+  position: relative;
+  overflow: hidden;
+}
+
+.media-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.72),
+      rgba(0, 0, 0, 0.82)
+    ),
+    url('media.jpg') center center / cover no-repeat;
+  z-index: 1;
+}
+
+.media-container {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.media-container h2 {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 0 28px 0;
+}
 
     .video-shell {
       width: 100%;

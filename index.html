@@ -347,19 +347,17 @@
   align-items: center;
   justify-content: center;
   margin: 0;
-  padding: 10px 18px;
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 18px;
-  letter-spacing: 1.5px;
-  line-height: 1;
-  color: #ffffff;
+  width: 46px;
+  height: 42px;
+  font-size: 20px;
   background: rgba(0, 0, 0, 0.86);
   border: 1px solid rgba(255, 255, 255, 0.16);
   cursor: pointer;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
-  flex-shrink: 0;
+  transition: all 0.2s ease;
 }
-
+.sound-icon {
+  pointer-events: none;
+}
 .sound-btn:hover {
   border-color: var(--accent);
   box-shadow: 0 0 16px rgba(139, 0, 0, 0.28);

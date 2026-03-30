@@ -487,10 +487,10 @@
       max-width: 1280px;
     }
 
- .shows-layout {
+.shows-layout {
   display: flex;
   flex-direction: column;
-  gap: 34px;
+  gap: 42px;
 }
 
 .shows-subtitle {
@@ -498,20 +498,22 @@
   font-family: 'Bebas Neue', sans-serif;
   font-size: 24px;
   letter-spacing: 1.6px;
-  color: rgba(255,255,255,0.82);
+  color: rgba(255,255,255,0.9);
 }
 
 .featured-shows {
   display: flex;
   flex-direction: column;
-  gap: 0;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .tour-row {
-  grid-template-columns: 1fr;
-  gap: 10px;
-  padding: 18px 0;
+  display: grid;
+  grid-template-columns: 92px 1fr;
+  gap: 24px;
+  align-items: center;
+  padding: 22px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .tour-date {
@@ -524,39 +526,39 @@
 
 .tour-day {
   font-family: 'Bebas Neue', sans-serif;
-  font-size: 42px;
+  font-size: 64px;
   letter-spacing: 1px;
   color: #ffffff;
 }
 
 .tour-month {
-  margin-top: 5px;
+  margin-top: 8px;
   font-family: 'Bebas Neue', sans-serif;
-  font-size: 14px;
+  font-size: 18px;
   letter-spacing: 2px;
   color: var(--accent-hover);
 }
 
 .tour-year {
-  margin-top: 3px;
+  margin-top: 4px;
   font-family: 'Bebas Neue', sans-serif;
-  font-size: 13px;
+  font-size: 16px;
   letter-spacing: 1.5px;
-  color: rgba(255,255,255,0.55);
+  color: rgba(255,255,255,0.65);
 }
 
 .tour-title {
   font-family: 'Bebas Neue', sans-serif;
-  font-size: 28px;
-  letter-spacing: 1.1px;
+  font-size: 38px;
+  letter-spacing: 1.15px;
   color: #ffffff;
   line-height: 1;
 }
 
 .tour-meta {
-  margin-top: 6px;
-  font-size: 16px;
-  line-height: 1.4;
+  margin-top: 10px;
+  font-size: 18px;
+  line-height: 1.45;
   color: var(--text-soft);
 }
 
@@ -567,30 +569,36 @@
 
 .agenda-row {
   display: grid;
-  grid-template-columns: 140px 1.2fr 120px 1.4fr;
-  gap: 18px;
+  grid-template-columns: 170px 1.35fr 140px 1.6fr;
+  gap: 22px;
   align-items: center;
-  padding: 12px 0;
+  padding: 14px 0;
   border-bottom: 1px solid rgba(255,255,255,0.08);
-  font-size: 15px;
-  color: var(--text-soft);
 }
 
-.agenda-date,
+.agenda-date {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 18px;
+  letter-spacing: 1px;
+  color: #ffffff;
+}
+
 .agenda-venue {
   font-family: 'Bebas Neue', sans-serif;
+  font-size: 18px;
   letter-spacing: 1px;
   color: #ffffff;
 }
 
 .agenda-city {
-  color: rgba(255,255,255,0.72);
+  font-size: 16px;
+  color: rgba(255,255,255,0.82);
 }
 
 .agenda-note {
-  color: var(--text-muted);
+  font-size: 16px;
+  color: var(--text-soft);
 }
-
     .about-panel {
       align-items: flex-start;
       padding-top: 120px;

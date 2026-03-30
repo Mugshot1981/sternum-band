@@ -761,7 +761,6 @@
   position: relative;
   width: min(760px, calc(100% - 32px));
   max-height: 80vh;
-  overflow-y: auto;
 
   margin: 10vh auto 0;
   background: #0f0f0f;
@@ -773,6 +772,10 @@
 
   padding: 0;
   z-index: 2;
+
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
 }
     .modal-dialog h3 {
       margin: 0 0 18px 0;

@@ -941,8 +941,17 @@
     }
 
     @media (max-width: 768px) {
-       html {
+          html {
         scroll-snap-type: none;
+      }
+
+      body {
+        scroll-snap-type: none;
+      }
+
+      .panel {
+        scroll-snap-align: none;
+        scroll-snap-stop: normal;
       }
 
        .top-nav {

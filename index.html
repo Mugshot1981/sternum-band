@@ -1815,10 +1815,7 @@ if (openBookingModalFooter) {
   bookingForm.addEventListener('submit', async function (event) {
     event.preventDefault();
 
-    const formData = new FormData(bookingForm);
-    const email = bookingForm.elements['email'].value.trim();
-
-    formData.set('_replyto', email);
+ const formData = new FormData(bookingForm);
 
     bookingFormStatus.textContent = 'Bezig met verzenden...';
 

@@ -1818,7 +1818,12 @@ if (openBookingModalFooter) {
   bookingForm.addEventListener('submit', async function (event) {
     event.preventDefault();
 
- const formData = new FormData(bookingForm);
+// honeypot check
+if (bookingForm.elements['company'].value !== '') {
+  return; // bot → stop
+}
+
+const formData = new FormData(bookingForm);
 
     bookingFormStatus.textContent = 'Bezig met verzenden...';
 

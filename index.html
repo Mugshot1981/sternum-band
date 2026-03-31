@@ -1586,42 +1586,46 @@
           Voor boekingen en show-aanvragen kun je hieronder direct een bericht voorbereiden aan info@sternum-band.nl.
         </p>
 
-        <form class="booking-form" id="bookingForm">
-          <div class="booking-grid">
-            <label>
-              Naam
-              <input type="text" name="name" required>
-            </label>
+     <form class="booking-form" id="bookingForm" action="https://formspree.io/f/xvzvrglv" method="POST">
+  <div class="booking-grid">
+    <label>
+      Naam
+      <input type="text" name="name" required>
+    </label>
 
-            <label>
-              E-mail
-              <input type="email" name="email" required>
-            </label>
-          </div>
+    <label>
+      E-mail
+      <input type="email" name="email" required>
+    </label>
+  </div>
 
-          <div class="booking-grid">
-            <label>
-              Onderwerp
-              <input type="text" name="subject" required>
-            </label>
+  <div class="booking-grid">
+    <label>
+      Onderwerp
+      <input type="text" name="subject" required>
+    </label>
 
-            <label>
-              Datum / locatie
-              <input type="text" name="details" placeholder="Bijv. 12 juni 2026 / Arnhem">
-            </label>
-          </div>
+    <label>
+      Datum / locatie
+      <input type="text" name="details" placeholder="Bijv. 12 juni 2026 / Arnhem">
+    </label>
+  </div>
 
-          <label>
-            Bericht
-            <textarea name="message" required></textarea>
-          </label>
+  <label>
+    Bericht
+    <textarea name="message" required></textarea>
+  </label>
 
-          <button class="booking-submit" type="submit">OPEN MAIL</button>
+  <input type="hidden" name="_subject" value="Nieuwe booking aanvraag via sternum-band.nl">
+  <input type="hidden" name="_replyto" value="">
+  <input type="hidden" name="_language" value="nl">
 
-          <p class="booking-note">
-            Deze versie gebruikt een mailto-fallback. Voor echte automatische verzending zonder mailprogramma heb je later nog een form-service of backend nodig.
-          </p>
-        </form>
+  <button class="booking-submit" type="submit">VERSTUUR AANVRAAG</button>
+
+  <p class="booking-note" id="bookingFormStatus">
+    Je aanvraag wordt direct verzonden naar info@sternum-band.nl.
+  </p>
+</form>
       </div>
     </div>
   </div>

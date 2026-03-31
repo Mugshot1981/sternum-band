@@ -1810,33 +1810,40 @@ if (openBookingModalFooter) {
       }
     });
   </script>
+<script>
+  const bookingForm = document.getElementById('bookingForm');
+  const bookingFormStatus = document.getElementById('bookingFormStatus');
 
-  <script>
-    const bookingForm = document.getElementById('bookingForm');
+  bookingForm.addEventListener('submit', async function (event) {
+    event.preventDefault();
 
-    bookingForm.addEventListener('submit', function (event) {
-      event.preventDefault();
+    const formData = new FormData(bookingForm);
+    const email = bookingForm.elements['email'].value.trim();
 
-      const name = bookingForm.elements['name'].value.trim();
-      const email = bookingForm.elements['email'].value.trim();
-      const subject = bookingForm.elements['subject'].value.trim();
-      const details = bookingForm.elements['details'].value.trim();
-      const message = bookingForm.elements['message'].value.trim();
+    formData.set('_replyto', email);
 
-      const fullSubject = subject || 'Booking aanvraag Sternum';
-      const body =
-`Naam: ${name}
-E-mail: ${email}
-Datum / locatie: ${details}
+    bookingFormStatus.textContent = 'Bezig met verzenden...';
 
-Bericht:
-${message}`;
+    try {
+      const response = await fetch(bookingForm.action, {
+        method: 'POST',
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
 
-      const mailtoLink =
-        `mailto:info@sternum-band.nl?subject=${encodeURIComponent(fullSubject)}&body=${encodeURIComponent(body)}`;
+      if (response.ok) {
+        bookingForm.reset();
+        bookingFormStatus.textContent = 'Dank. Je bookingaanvraag is verzonden.';
+      } else {
+        bookingFormStatus.textContent = 'Verzenden mislukt. Probeer het opnieuw of mail direct naar info@sternum-band.nl.';
+      }
+    } catch (error) {
+      bookingFormStatus.textContent = 'Verzenden mislukt. Probeer het opnieuw of mail direct naar info@sternum-band.nl.';
+    }
+  });
+</script>
 
-      window.location.href = mailtoLink;
-    });
-  </script>
 </body>
 </html>

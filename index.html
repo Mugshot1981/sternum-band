@@ -1694,16 +1694,21 @@ soundButton.addEventListener('click', function () {
 
     const aboutModal = document.getElementById('aboutModal');
     const bookingModal = document.getElementById('bookingModal');
-    const openAboutModal = document.getElementById('openAboutModal');
-    const openBookingModal = document.getElementById('openBookingModal');
+   const openAboutModal = document.getElementById('openAboutModal');
+const openBookingModal = document.getElementById('openBookingModal');
+const openBookingModalFooter = document.getElementById('openBookingModalFooter');
 
-    if (openAboutModal) {
-      openAboutModal.addEventListener('click', () => openModal(aboutModal));
-    }
+if (openAboutModal) {
+  openAboutModal.addEventListener('click', () => openModal(aboutModal));
+}
 
-    if (openBookingModal) {
-      openBookingModal.addEventListener('click', () => openModal(bookingModal));
-    }
+if (openBookingModal) {
+  openBookingModal.addEventListener('click', () => openModal(bookingModal));
+}
+
+if (openBookingModalFooter) {
+  openBookingModalFooter.addEventListener('click', () => openModal(bookingModal));
+}
 
     document.querySelectorAll('[data-close-modal]').forEach((button) => {
       button.addEventListener('click', function () {

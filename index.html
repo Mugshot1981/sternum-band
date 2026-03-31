@@ -944,14 +944,21 @@
         font-size: 19px;
       }
     }
+.footer-bar {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 48px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
 .footer-social {
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-.footer-book-btn {
-  align-self: flex-end;
+  gap: 18px;
+  flex: 1;
 }
 
 .footer-title {
@@ -972,10 +979,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-
   border: 1px solid rgba(255,255,255,0.15);
   color: rgba(255,255,255,0.7);
-
   transition: all 0.2s ease;
 }
 
@@ -989,22 +994,26 @@
   width: 18px;
   height: 18px;
 }
-.footer-book-btn {
-  margin-top: 10px;
-  padding: 16px 34px;
 
+.footer-cta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 14px;
+  flex-shrink: 0;
+}
+
+.footer-book-btn {
+  padding: 16px 34px;
+  min-width: 250px;
   font-family: 'Bebas Neue', sans-serif;
   font-size: 20px;
   letter-spacing: 2px;
-
   color: #fff;
   background: rgba(139, 0, 0, 0.25);
   border: 1px solid rgba(139, 0, 0, 0.9);
-
   cursor: pointer;
-
   box-shadow: 0 0 14px rgba(139,0,0,0.25);
-
   transition: all 0.2s ease;
 }
 
@@ -1013,22 +1022,25 @@
   border-color: #ff3b3b;
   box-shadow: 0 0 20px rgba(139,0,0,0.6);
 }
+
 .footer-whatsapp-btn {
-  margin-top: 12px;
+  min-width: 250px;
   padding: 14px 22px;
   border: 1px solid #25D366;
   color: #25D366;
   text-decoration: none;
-  font-weight: 600;
-  letter-spacing: 1px;
-  display: inline-block;
-  align-self: flex-end;
-  transition: 0.2s ease;
+  text-align: center;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 18px;
+  letter-spacing: 1.8px;
+  background: rgba(37, 211, 102, 0.08);
+  transition: all 0.2s ease;
 }
 
 .footer-whatsapp-btn:hover {
   background: #25D366;
   color: #000;
+  box-shadow: 0 0 18px rgba(37,211,102,0.35);
 }
     @media (max-width: 768px) {
           html {

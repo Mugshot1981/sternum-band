@@ -1269,6 +1269,13 @@
 .about-image-large {
   max-height: none;
   overflow: visible;
+  border: none;
+  box-shadow: none;
+  background: transparent;
+}
+
+.about-image-large::after {
+  display: none;
 }
 
 .about-image-large .about-desktop-img {
@@ -1281,6 +1288,49 @@
 
 .about-mobile-stack {
   display: flex;
+  flex-direction: column;
+  gap: 0;
+  width: 100%;
+  max-width: 420px;
+  margin: 0 auto;
+}
+
+.about-mobile-stack img {
+  width: 86%;
+  display: block;
+  border: 1px solid rgba(255,255,255,0.08);
+  box-shadow:
+    0 20px 40px rgba(0,0,0,0.45),
+    0 0 20px rgba(139,0,0,0.10);
+}
+
+.about-mobile-stack img:nth-child(1) {
+  margin-left: 0;
+  transform: translateY(0);
+}
+
+.about-mobile-stack img:nth-child(2) {
+  margin-left: auto;
+  margin-top: -22px;
+  transform: translateY(8px);
+}
+
+.about-mobile-stack img:nth-child(3) {
+  margin-left: 0;
+  margin-top: -22px;
+  transform: translateY(16px);
+}
+
+.about-mobile-stack img:nth-child(4) {
+  margin-left: auto;
+  margin-top: -22px;
+  transform: translateY(24px);
+}
+
+.about-mobile-stack img:nth-child(5) {
+  margin-left: 0;
+  margin-top: -22px;
+  transform: translateY(32px);
 }
       .modal-dialog h3 {
         font-size: 28px;

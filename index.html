@@ -1145,14 +1145,29 @@
       margin-bottom: 20px;
     }
 
+.hero-content {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 32px;
+}
+
 .metal-btn {
-  top: auto;
-  bottom: 36px;
+  position: static;
+  transform: none;
   min-width: 150px;
   padding: 12px 24px;
   font-size: 18px;
   letter-spacing: 1.5px;
   line-height: 1;
+}
+
+.metal-btn:hover {
+  transform: translateY(-2px);
+}
+
+.metal-btn:active {
+  transform: translateY(0);
 }
 
     .metal-btn:hover {

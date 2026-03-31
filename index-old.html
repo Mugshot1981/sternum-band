@@ -5,13 +5,9 @@
   <title>Sternum</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
   <style>
-    /* =========================
-       1. ROOT / BASISKLEUREN
-       ========================= */
     :root {
       --bg: #0b0b0b;
       --bg-soft: #111111;
@@ -30,9 +26,6 @@
       --shadow: 0 10px 30px rgba(0, 0, 0, 0.28);
     }
 
-    /* =========================
-       2. RESET / BASIS
-       ========================= */
     * {
       box-sizing: border-box;
     }
@@ -72,9 +65,6 @@
       text-decoration: none;
     }
 
-    /* =========================
-       3. FIXED TOP NAV
-       ========================= */
     .top-nav {
       position: fixed;
       top: 0;
@@ -87,14 +77,14 @@
       border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     }
 
-    .nav-inner {
-      max-width: 1400px;
-      margin: 0 auto;
-      padding: 16px 24px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
+.nav-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 
     .nav-logo {
       display: flex;
@@ -107,28 +97,100 @@
       display: block;
     }
 
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 22px;
-    }
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
 
-    .nav-links a {
+.social-links {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+    .nav-links a,
+    .booking-trigger {
       font-family: 'Bebas Neue', sans-serif;
       font-size: 18px;
       letter-spacing: 1.5px;
       color: rgba(255, 255, 255, 0.82);
-      transition: color 0.2s ease, text-shadow 0.2s ease;
+      transition: color 0.2s ease, text-shadow 0.2s ease, border-color 0.2s ease, background 0.2s ease;
     }
 
-    .nav-links a:hover {
+    .nav-links a:hover,
+    .booking-trigger:hover {
       color: #ffffff;
       text-shadow: 0 0 10px rgba(139, 0, 0, 0.55);
     }
+.whatsapp-icon {
+  width: 38px;
+  height: 38px;
 
-    /* =========================
-       4. SCROLL DOTS
-       ========================= */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 50%;
+
+  color: rgba(255,255,255,0.8);
+
+  transition: all 0.2s ease;
+}
+
+.whatsapp-icon svg {
+  width: 18px;
+  height: 18px;
+}
+
+.whatsapp-icon:hover {
+  border-color: var(--accent);
+  color: #fff;
+  box-shadow: 0 0 10px rgba(139,0,0,0.4);
+}
+.social-links a {
+  width: 34px;
+  height: 34px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: 1px solid rgba(255,255,255,0.15);
+  color: rgba(255,255,255,0.7);
+  transition: all 0.2s ease;
+  flex: 0 0 34px;
+}
+.social-links svg {
+  width: 16px;
+  height: 16px;
+}
+.social-links a:hover {
+  color: #fff;
+  border-color: var(--accent);
+  box-shadow: 0 0 8px rgba(139,0,0,0.4);
+}
+    .booking-trigger {
+      appearance: none;
+      border: 1px solid rgba(139, 0, 0, 0.7);
+      background: rgba(139, 0, 0, 0.16);
+      color: #ffffff;
+      padding: 10px 16px;
+      line-height: 1;
+      cursor: pointer;
+      text-shadow: none;
+    }
+
+    .booking-trigger:hover {
+      background: rgba(139, 0, 0, 0.28);
+      border-color: rgba(181, 43, 43, 0.95);
+      box-shadow: 0 0 14px rgba(139, 0, 0, 0.22);
+    }
+
     .scroll-dots {
       position: fixed;
       right: 20px;
@@ -154,9 +216,6 @@
       background: white;
     }
 
-    /* =========================
-       5. ALGEMENE PANEL STRUCTUUR
-       ========================= */
     .panel {
       min-height: 100vh;
       width: 100%;
@@ -167,7 +226,11 @@
       scroll-snap-stop: always;
       padding: 48px 24px;
     }
-
+/* uitzondering voor media */
+.media-panel {
+  min-height: auto;
+  padding-bottom: 120px;
+}
     .container {
       width: 100%;
       max-width: 1100px;
@@ -179,9 +242,6 @@
       align-items: stretch;
     }
 
-    /* =========================
-       6. HERO
-       ========================= */
     .hero {
       position: relative;
       padding: 0;
@@ -208,6 +268,101 @@
       z-index: 2;
     }
 
+
+.about-image-large {
+  position: relative;
+  width: 100%;
+  max-height: 520px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow:
+    0 40px 100px rgba(0, 0, 0, 0.9),
+    0 0 40px rgba(139, 0, 0, 0.15);
+}
+
+.about-mobile-stack {
+  display: none;
+}
+
+.about-mobile-card {
+  position: relative;
+  z-index: 1;
+}
+
+.about-mobile-card img {
+  width: 100%;
+  display: block;
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+.about-mobile-card span {
+  position: absolute;
+  left: 14px;
+  bottom: -14px;
+  z-index: 2;
+  padding: 8px 12px;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 15px;
+  letter-spacing: 1.1px;
+  color: #fff;
+  background: rgba(0,0,0,0.82);
+  border: 1px solid rgba(255,255,255,0.14);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.35);
+}
+
+.about-hover {
+  cursor: pointer;
+}
+
+.about-overlay {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.about-person {
+  position: relative;
+}
+
+
+
+/* hover systeem */
+.about-hover {
+  cursor: pointer;
+}
+
+.about-overlay {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.about-person {
+  position: relative;
+}
+
+.about-person span {
+  position: absolute;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%) translateY(10px);
+  padding: 8px 12px;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 16px;
+  letter-spacing: 1.2px;
+  background: rgba(0,0,0,0.7);
+  border: 1px solid rgba(255,255,255,0.15);
+  opacity: 0;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.about-person:hover span {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
     .metal-btn {
       position: absolute;
       left: 50%;
@@ -245,30 +400,30 @@
       transform: translate(-50%, -50%);
     }
 
-    /* =========================
-       7. RELEASE VIDEO
-       ========================= */
-#media {
-  scroll-margin-top: 110px;
-}
+    #media {
+      scroll-margin-top: 110px;
+    }
+    #shows {
+      scroll-margin-top: 150px;
+    }
 
-.media-panel {
-  position: relative;
-  overflow: hidden;
-}
+    .media-panel {
+      position: relative;
+      overflow: hidden;
+    }
 
-.media-bg {
-  position: absolute;
-  inset: 0;
-  background:
-    linear-gradient(
-      to bottom,
-      rgba(0, 0, 0, 0.72),
-      rgba(0, 0, 0, 0.82)
-    ),
-    url('media.jpg') center center / cover no-repeat;
-  z-index: 1;
-}
+    .media-bg {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(
+          to bottom,
+          rgba(0, 0, 0, 0.62),
+          rgba(0, 0, 0, 0.80)
+        ),
+        url('media.jpg') center center / cover no-repeat;
+      z-index: 1;
+    }
 
 .media-container {
   position: relative;
@@ -277,55 +432,83 @@
   flex-direction: column;
   align-items: center;
   padding-top: 48px;
-  padding-bottom: 48px;
+  padding-bottom: 120px;
 }
 
-.media-container h2 {
-  width: 100%;
-  max-width: 980px;
-  margin: 0 0 20px 0;
-}
-
-.video-shell {
-  width: 100%;
-  max-width: 980px;
-  margin: 0 auto;
-  position: relative;
-  z-index: 5;
-  overflow: visible;
-}
-
-    .sound-btn {
-      display: inline-block;
-      margin: 0 0 14px auto;
-      padding: 10px 18px;
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 18px;
-      letter-spacing: 1.5px;
-      line-height: 1;
-      color: #ffffff;
-      background: rgba(0, 0, 0, 0.78);
-      border: 1px solid rgba(255, 255, 255, 0.16);
-      cursor: pointer;
-      transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    .media-container h2 {
+      width: 100%;
+      max-width: 1100px;
+      margin: 0 0 20px 0;
     }
 
-    .sound-btn:hover {
-      border-color: var(--accent);
-      box-shadow: 0 0 16px rgba(139, 0, 0, 0.28);
-      background: rgba(0, 0, 0, 0.9);
+    .video-shell {
+      width: 100%;
+      max-width: 1100px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 5;
+      overflow: visible;
     }
 
-  .video-wrapper #sternum-player iframe {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 108%;
-  height: 108%;
-  transform: translate(-50%, -50%);
-  border: none;
+   .media-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  margin-bottom: 14px;
+  padding: 10px 12px;
+  background: rgba(0, 0, 0, 0.52);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+.sound-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  width: 52px;
+  height: 42px;
+  padding: 0;
+  background: rgba(0, 0, 0, 0.86);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  color: #ffffff;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.sound-btn:hover {
+  border-color: var(--accent);
+  box-shadow: 0 0 16px rgba(139, 0, 0, 0.28);
+  background: rgba(0, 0, 0, 0.92);
+}
+
+.sound-icon {
+  width: 20px;
+  height: 20px;
   display: block;
+  pointer-events: none;
 }
+
+.video-selector {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 0;
+  margin-bottom: 12px; /* ← dit is de fix */
+  justify-content: flex-end;
+  flex: 1;
+}
+    .video-wrapper {
+      position: relative;
+      width: 100%;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: #000;
+      box-shadow:
+        0 30px 80px rgba(0, 0, 0, 0.8),
+        0 0 40px rgba(139, 0, 0, 0.15);
+      overflow: hidden;
+      z-index: 2;
+    }
 
     .video-wrapper::before {
       content: "";
@@ -344,8 +527,8 @@
       position: absolute;
       top: 50%;
       left: 50%;
-      width: 120%;
-      height: 120%;
+      width: 108%;
+      height: 108%;
       transform: translate(-50%, -50%);
       border: none;
       display: block;
@@ -357,41 +540,100 @@
         0 0 60px rgba(139, 0, 0, 0.3);
     }
 
-    /* =========================
-       8. SHOWS / TOUR STYLE
-       ========================= */
+
+.spotify-block {
+  width: 100%;
+  max-width: 1100px;
+  margin-top: 56px;
+  margin-bottom: 80px;
+  opacity: 0.92;
+}
+
+.spotify-block iframe {
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.08);
+}
+    .video-btn {
+      padding: 9px 14px;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 15px;
+      letter-spacing: 1.3px;
+      background: rgba(0, 0, 0, 0.78);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      color: #fff;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .video-btn:hover {
+      border-color: var(--accent);
+      box-shadow: 0 0 10px rgba(139, 0, 0, 0.4);
+    }
+
+    .video-btn.active {
+      border-color: var(--accent);
+      background: rgba(139, 0, 0, 0.2);
+    }
+
+    .video-btn:disabled {
+      opacity: 0.45;
+      cursor: default;
+      box-shadow: none;
+      border-color: rgba(255, 255, 255, 0.12);
+    }
+
     .shows-bg {
       position: relative;
       background: url('background-setlist.jpg') center center / cover no-repeat;
     }
+.shows-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.88) 0%,
+      rgba(0, 0, 0, 0.78) 35%,
+      rgba(0, 0, 0, 0.55) 70%,
+      rgba(0, 0, 0, 0.65) 100%
+    );
+  z-index: 1;
+}
 
-    .shows-bg::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.68);
-      z-index: 1;
-    }
+.shows-bg .container {
+  position: relative;
+  z-index: 2;
+  max-width: 1100px;
+}
+.shows-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 42px;
+  padding-top: 40px;
+  padding-bottom: 60px;
+}
 
-    .shows-bg .container {
-      position: relative;
-      z-index: 2;
-      max-width: 1280px;
-    }
+.shows-subtitle {
+  margin: 0 0 14px 0;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 24px;
+  letter-spacing: 1.6px;
+  color: rgba(255,255,255,0.9);
+}
 
-    .tour-list {
-      display: flex;
-      flex-direction: column;
-      width: 100%;
-      border-top: 1px solid rgba(255, 255, 255, 0.08);
-    }
+.featured-shows {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
 
-   .tour-row {
+.tour-row {
   display: grid;
-  grid-template-columns: 120px 1fr;
-  gap: 28px;
+  grid-template-columns: 92px 1fr;
+  gap: 24px;
   align-items: center;
-  padding: 24px 0;
+  padding: 22px 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
@@ -405,15 +647,15 @@
 
 .tour-day {
   font-family: 'Bebas Neue', sans-serif;
-  font-size: 58px;
+  font-size: 64px;
   letter-spacing: 1px;
   color: #ffffff;
 }
 
 .tour-month {
-  margin-top: 6px;
+  margin-top: 8px;
   font-family: 'Bebas Neue', sans-serif;
-  font-size: 17px;
+  font-size: 18px;
   letter-spacing: 2px;
   color: var(--accent-hover);
 }
@@ -421,49 +663,75 @@
 .tour-year {
   margin-top: 4px;
   font-family: 'Bebas Neue', sans-serif;
-  font-size: 15px;
+  font-size: 16px;
   letter-spacing: 1.5px;
-  color: rgba(255,255,255,0.55);
+  color: rgba(255,255,255,0.65);
 }
 
 .tour-title {
   font-family: 'Bebas Neue', sans-serif;
   font-size: 38px;
-  letter-spacing: 1.2px;
+  letter-spacing: 1.15px;
   color: #ffffff;
   line-height: 1;
 }
 
 .tour-meta {
-  margin-top: 8px;
+  margin-top: 10px;
   font-size: 18px;
   line-height: 1.45;
   color: var(--text-soft);
 }
 
-    /* =========================
-       9. ABOUT
-       ========================= */
-    .about-panel {
-      align-items: flex-start;
-      padding-top: 120px;
-    }
+.agenda-list {
+  width: 100%;
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
 
-    .about-stack {
-      display: flex;
-      flex-direction: column;
-      gap: 28px;
-    }
+.agenda-row {
+  display: grid;
+  grid-template-columns: 170px 1.35fr 140px 1.6fr;
+  gap: 22px;
+  align-items: center;
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
 
-    .about-image-large {
-      position: relative;
-      width: 100%;
-      overflow: hidden;
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      box-shadow:
-        0 40px 100px rgba(0, 0, 0, 0.9),
-        0 0 40px rgba(139, 0, 0, 0.15);
-    }
+.agenda-date {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 18px;
+  letter-spacing: 1px;
+  color: #ffffff;
+}
+
+.agenda-venue {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 18px;
+  letter-spacing: 1px;
+  color: #ffffff;
+}
+
+.agenda-city {
+  font-size: 16px;
+  color: rgba(255,255,255,0.82);
+}
+
+.agenda-note {
+  font-size: 16px;
+  color: var(--text-soft);
+}
+.about-panel {
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 80px;
+}
+
+.about-stack {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* ← DIT IS DE FIX */
+  gap: 18px;
+}
 
     .about-image-large img {
       width: 100%;
@@ -492,98 +760,194 @@
       margin-bottom: 18px;
     }
 
-    .read-more-btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 12px 22px;
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 18px;
-      letter-spacing: 1.5px;
-      line-height: 1;
-      color: #ffffff;
-      background: rgba(0, 0, 0, 0.78);
-      border: 1px solid rgba(255, 255, 255, 0.16);
-      cursor: pointer;
-      transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
-    }
+.read-more-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 28px;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 20px;
+  letter-spacing: 1.8px;
+  line-height: 1;
 
-    .read-more-btn:hover {
-      border-color: var(--accent);
-      box-shadow: 0 0 16px rgba(139, 0, 0, 0.28);
-      background: rgba(0, 0, 0, 0.9);
-    }
+  color: #fff;
+  background: rgba(139, 0, 0, 0.25);
+  border: 1px solid rgba(139, 0, 0, 0.9);
 
-    /* About modal */
-    .about-modal {
+  box-shadow: 0 0 12px rgba(139, 0, 0, 0.25);
+}
+
+.read-more-btn:hover {
+  background: rgba(139, 0, 0, 0.45);
+  border-color: #ff3b3b;
+  box-shadow: 0 0 18px rgba(139, 0, 0, 0.6);
+}
+.about-heading {
+  margin-top: 12px;
+  margin-bottom: 6px;
+
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 18px;
+  letter-spacing: 2px;
+
+  color: #ff4d4d;
+}
+    .modal {
       position: fixed;
       inset: 0;
       z-index: 3000;
       display: none;
     }
 
-    .about-modal.is-open {
+    .modal.is-open {
       display: block;
     }
 
-    .about-modal-backdrop {
+    .modal-backdrop {
       position: absolute;
       inset: 0;
       background: rgba(0, 0, 0, 0.78);
       backdrop-filter: blur(6px);
       -webkit-backdrop-filter: blur(6px);
     }
+.modal-dialog {
+  position: relative;
+  width: min(760px, calc(100% - 32px));
+  max-height: 80vh;
 
-    .about-modal-dialog {
-      position: relative;
-      width: min(760px, calc(100% - 32px));
-      margin: 10vh auto 0;
-      background: #0f0f0f;
-      border: 1px solid var(--border);
-      box-shadow:
-        0 30px 90px rgba(0, 0, 0, 0.85),
-        0 0 30px rgba(139, 0, 0, 0.18);
-      padding: 32px 28px 28px;
-      z-index: 2;
-    }
+  margin: 10vh auto 0;
+  background: #151515;
+  border: 1px solid rgba(255, 255, 255, 0.10);
 
-    .about-modal-dialog h3 {
+  box-shadow:
+    0 30px 90px rgba(0, 0, 0, 0.85),
+    0 0 30px rgba(139, 0, 0, 0.18);
+
+  padding: 0;
+  z-index: 2;
+
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+    .modal-dialog h3 {
       margin: 0 0 18px 0;
       font-size: 34px;
       color: var(--text);
     }
 
-    .about-modal-content {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-    }
+.modal-content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 24px 28px 28px 28px;
+  overflow-y: auto;
+  min-height: 0;
+}
 
-    .about-modal-content p {
+    .modal-content p {
       font-size: 18px;
       line-height: 1.75;
       color: var(--text-soft);
     }
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 
-    .about-modal-close {
-      position: absolute;
-      top: 10px;
-      right: 14px;
-      border: none;
-      background: transparent;
-      color: rgba(255, 255, 255, 0.75);
-      font-size: 28px;
-      line-height: 1;
-      cursor: pointer;
-    }
+  background: #0f0f0f;
+  padding: 32px 28px 18px 28px;
+  margin-bottom: 0;
 
-    .about-modal-close:hover {
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  flex-shrink: 0;
+}
+.modal-close {
+  position: static;
+  margin-left: auto;
+
+  display: block;
+
+  border: none;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 28px;
+  line-height: 1;
+  cursor: pointer;
+}
+    .modal-close:hover {
       color: #ffffff;
     }
 
-    /* =========================
-       10. FOOTER
-       ========================= */
+    .booking-form {
+      display: grid;
+      gap: 14px;
+      margin-top: 8px;
+    }
+
+    .booking-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    .booking-form label {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      font-size: 14px;
+      color: var(--text-soft);
+    }
+
+    .booking-form input,
+    .booking-form textarea {
+      width: 100%;
+      background: #0a0a0a;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      color: #ffffff;
+      padding: 14px 14px;
+      font-family: 'Inter', sans-serif;
+      font-size: 15px;
+      outline: none;
+    }
+
+    .booking-form input:focus,
+    .booking-form textarea:focus {
+      border-color: rgba(139, 0, 0, 0.8);
+      box-shadow: 0 0 0 1px rgba(139, 0, 0, 0.25);
+    }
+
+    .booking-form textarea {
+      min-height: 160px;
+      resize: vertical;
+    }
+
+    .booking-submit {
+      justify-self: start;
+      padding: 12px 22px;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 18px;
+      letter-spacing: 1.5px;
+      color: #ffffff;
+      background: rgba(139, 0, 0, 0.18);
+      border: 1px solid rgba(139, 0, 0, 0.72);
+      cursor: pointer;
+      transition: background 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .booking-submit:hover {
+      background: rgba(139, 0, 0, 0.28);
+      border-color: rgba(181, 43, 43, 0.95);
+      box-shadow: 0 0 14px rgba(139, 0, 0, 0.18);
+    }
+
+    .booking-note {
+      font-size: 13px;
+      line-height: 1.5;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+
     footer {
       width: 100%;
       text-align: center;
@@ -598,38 +962,6 @@
       margin: 8px 0;
     }
 
-.video-selector {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 16px;
-  justify-content: flex-start;
-}
-
-.video-btn {
-  padding: 9px 14px;
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 15px;
-  letter-spacing: 1.3px;
-  background: rgba(0,0,0,0.78);
-  border: 1px solid rgba(255,255,255,0.18);
-  color: #fff;
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
-.video-btn:hover {
-  border-color: var(--accent);
-  box-shadow: 0 0 10px rgba(139,0,0,0.4);
-}
-
-.video-btn.active {
-  border-color: var(--accent);
-  background: rgba(139,0,0,0.2);
-}
-
-    /* =========================
-       11. RESPONSIVE - TABLET
-       ========================= */
     @media (max-width: 1100px) {
       .panel {
         padding: 40px 20px;
@@ -660,45 +992,180 @@
         font-size: 19px;
       }
     }
+.footer-bar {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 48px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
 
-    /* =========================
-       12. RESPONSIVE - MOBILE
-       ========================= */
+.footer-social {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  flex: 1;
+}
+
+.footer-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 20px;
+  letter-spacing: 2px;
+  color: rgba(255,255,255,0.8);
+}
+
+.footer-icons {
+  display: flex;
+  gap: 14px;
+}
+
+.footer-icons a {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255,255,255,0.15);
+  color: rgba(255,255,255,0.7);
+  transition: all 0.2s ease;
+}
+
+.footer-icons a:hover {
+  color: #fff;
+  border-color: var(--accent);
+  box-shadow: 0 0 12px rgba(139,0,0,0.4);
+}
+
+.footer-icons svg {
+  width: 18px;
+  height: 18px;
+}
+
+.footer-cta {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 14px;
+  flex-shrink: 0;
+}
+
+.footer-book-btn {
+  padding: 16px 34px;
+  min-width: 250px;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 20px;
+  letter-spacing: 2px;
+  color: #fff;
+  background: rgba(139, 0, 0, 0.25);
+  border: 1px solid rgba(139, 0, 0, 0.9);
+  cursor: pointer;
+  box-shadow: 0 0 14px rgba(139,0,0,0.25);
+  transition: all 0.2s ease;
+}
+.footer-book-btn:hover {
+  background: rgba(139, 0, 0, 0.45);
+  border-color: #ff3b3b;
+  box-shadow: 0 0 20px rgba(139,0,0,0.6);
+}
+
+.footer-whatsapp-btn {
+  min-width: 250px;
+  padding: 12px 22px;
+
+  border: 1px solid rgba(255,255,255,0.25);
+  color: rgba(255,255,255,0.8);
+
+  text-decoration: none;
+  text-align: center;
+
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 16px;
+  letter-spacing: 1.6px;
+
+  background: transparent;
+  transition: all 0.2s ease;
+}
+
+.footer-whatsapp-btn:hover {
+  border-color: var(--accent);
+  color: #fff;
+  box-shadow: 0 0 12px rgba(139,0,0,0.35);
+}
     @media (max-width: 768px) {
-      html {
-        scroll-snap-type: y proximity;
+          html {
+        scroll-snap-type: none;
       }
 
-      .top-nav {
+      body {
+        scroll-snap-type: none;
+      }
+
+      .panel {
+        scroll-snap-align: none;
+        scroll-snap-stop: normal;
+      }
+
+       .top-nav {
+        position: sticky;
+        top: 0;
+        z-index: 2000;
         background: rgba(0, 0, 0, 0.72);
       }
+        .nav-inner {
+        padding: 12px 16px;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+      }
 
-      .nav-inner {
-        padding: 14px 16px;
+      .nav-left {
+        width: 100%;
+        justify-content: space-between;
+        gap: 12px;
       }
 
       .nav-logo img {
         height: 32px;
       }
 
-      .nav-links {
-        gap: 14px;
-        flex-wrap: wrap;
-        justify-content: flex-end;
+      .social-links {
+        gap: 6px;
       }
 
-      .nav-links a {
-        font-size: 16px;
+      .social-links a {
+        width: 32px;
+        height: 32px;
+        padding: 0;
+      }
+
+.nav-links {
+  width: 100%;
+  justify-content: flex-end;
+  gap: 14px;
+  text-align: right;
+}
+
+.nav-links a {
+  text-align: right;
+}
+      .nav-links a,
+      .booking-trigger {
+        font-size: 15px;
         letter-spacing: 1px;
       }
 
-      .panel {
-        min-height: 100svh;
-        padding: 28px 16px;
+      .booking-trigger {
+        padding: 8px 12px;
       }
-
-      .hero {
-        background: url('herobanner-mobile.jpg') center center / cover no-repeat;
+.panel {
+  min-height: 100svh;
+  padding: 28px 16px;
+}
+         .hero {
+        background: url('herobanner-mobile.jpg') center 60% / cover no-repeat;
       }
 
       .hero::before {
@@ -731,27 +1198,76 @@
         transform: translate(-50%, -50%);
       }
 
-      .tour-row {
-        grid-template-columns: 1fr;
-        gap: 12px;
-        padding: 22px 0;
-      }
+    .tour-row {
+  grid-template-columns: 72px 1fr;
+  gap: 14px;
+  padding: 16px 0;
+  align-items: start;
+}
 
-      .tour-day {
-        font-size: 48px;
-      }
+.tour-date {
+  align-items: flex-start;
+}
 
-      .tour-month {
-        font-size: 16px;
-      }
+.tour-day {
+  font-size: 34px;
+}
 
-      .tour-title {
-        font-size: 30px;
-      }
+.tour-month {
+  font-size: 11px;
+  margin-top: 4px;
+  letter-spacing: 1.5px;
+}
 
-      .tour-meta {
-        font-size: 16px;
-      }
+.tour-year {
+  font-size: 11px;
+  margin-top: 2px;
+}
+
+.tour-info {
+  width: 100%;
+}
+
+.tour-title {
+  font-size: 18px;
+  line-height: 1.12;
+  letter-spacing: 0.4px;
+}
+
+.tour-meta {
+  margin-top: 8px;
+  font-size: 14px;
+  line-height: 1.35;
+}
+
+.agenda-row {
+  grid-template-columns: 1fr;
+  gap: 3px;
+  padding: 11px 0;
+}
+
+.agenda-date {
+  font-size: 13px;
+  line-height: 1;
+  letter-spacing: 0.8px;
+}
+
+.agenda-venue {
+  font-size: 18px;
+  line-height: 1.08;
+  letter-spacing: 0.4px;
+  margin-top: 1px;
+}
+
+.agenda-city {
+  font-size: 14px;
+  margin-top: 3px;
+}
+
+.agenda-note {
+  font-size: 13px;
+  line-height: 1.35;
+}
 
       .about-panel {
         padding-top: 80px;
@@ -762,26 +1278,229 @@
         line-height: 1.6;
       }
 
-      .about-modal-dialog {
-        width: calc(100% - 20px);
-        margin-top: 8vh;
-        padding: 24px 18px 20px;
-      }
+.modal-dialog {
+  width: calc(100% - 20px);
+  margin-top: 8vh;
+  padding: 0;
+}
+.about-image-large {
+  max-height: none;
+  overflow: visible;
+  border: none;
+  box-shadow: none;
+  background: transparent;
+}
 
-      .about-modal-dialog h3 {
+.about-image-large::after {
+  display: none;
+}
+
+.about-image-large .about-desktop-img {
+  display: none;
+}
+
+.about-overlay {
+  display: none;
+}
+
+.about-mobile-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  width: 100%;
+  max-width: 420px;
+  margin: 0 auto 56px auto;
+}
+
+.about-mobile-card {
+  width: 86%;
+}
+
+.about-mobile-card img {
+  width: 100%;
+  display: block;
+  box-shadow:
+    0 20px 40px rgba(0,0,0,0.45),
+    0 0 20px rgba(139,0,0,0.10);
+}
+
+.about-mobile-card:nth-child(1) {
+  margin-left: 0;
+  transform: translateY(0);
+}
+
+.about-mobile-card:nth-child(2) {
+  margin-left: auto;
+  margin-top: -22px;
+  transform: translateY(8px);
+}
+
+.about-mobile-card:nth-child(3) {
+  margin-left: 0;
+  margin-top: -22px;
+  transform: translateY(16px);
+}
+
+.about-mobile-card:nth-child(4) {
+  margin-left: auto;
+  margin-top: -22px;
+  transform: translateY(24px);
+}
+
+.about-mobile-card:nth-child(5) {
+  margin-left: 0;
+  margin-top: -22px;
+  transform: translateY(32px);
+}
+      .modal-dialog h3 {
         font-size: 28px;
       }
 
-      .about-modal-content p {
+      .modal-content p {
         font-size: 16px;
         line-height: 1.65;
       }
+
+      .booking-grid {
+        grid-template-columns: 1fr;
+      }
+.media-controls {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 12px;
+}
+
+.sound-btn {
+  width: 44px;
+  height: 44px;
+}
+
+.sound-icon {
+  width: 18px;
+  height: 18px;
+}
+
+.video-selector {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 8px;
+  margin-bottom: 0;
+}
+
+.video-btn {
+  min-width: 120px;
+  padding: 10px 12px;
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+
+ .tour-row {
+  grid-template-columns: 72px 1fr;
+  gap: 14px;
+  padding: 16px 0;
+  align-items: start;
+}
+
+.tour-date {
+  align-items: flex-start;
+}
+
+.tour-day {
+  font-size: 34px;
+}
+
+.tour-month {
+  font-size: 11px;
+  margin-top: 4px;
+  letter-spacing: 1.5px;
+}
+
+.tour-year {
+  font-size: 11px;
+  margin-top: 2px;
+}
+
+.tour-info {
+  width: 100%;
+}
+
+.tour-title {
+  font-size: 18px;
+  line-height: 1.12;
+  letter-spacing: 0.4px;
+}
+
+.tour-meta {
+  margin-top: 8px;
+  font-size: 14px;
+  line-height: 1.35;
+}
+
+.agenda-row {
+  grid-template-columns: 1fr;
+  gap: 3px;
+  padding: 11px 0;
+}
+
+.agenda-date {
+  font-size: 13px;
+  line-height: 1;
+  letter-spacing: 0.8px;
+}
+
+.agenda-venue {
+  font-size: 18px;
+  line-height: 1.08;
+  letter-spacing: 0.4px;
+  margin-top: 1px;
+}
+
+.agenda-city {
+  font-size: 14px;
+  margin-top: 3px;
+}
+
+.agenda-note {
+  font-size: 13px;
+  line-height: 1.35;
+}
+.footer-bar {
+  flex-direction: column;
+  align-items: center;
+  gap: 28px;
+}
+
+.footer-social {
+  width: 100%;
+  align-items: center;
+}
+
+.footer-cta {
+  width: 100%;
+  justify-content: center;
+}
+
+.footer-book-btn {
+  min-width: 0;
+  width: 100%;
+  max-width: 280px;
+  padding: 14px 24px;
+  font-size: 18px;
+}
+
+.footer-cta .whatsapp-icon {
+  flex: 0 0 38px;
+}
     }
 
-    /* =========================
-       13. RESPONSIVE - HEEL KLEIN
-       ========================= */
     @media (max-width: 420px) {
+      .hero {
+        background-position: center 58%;
+      }
+
       .metal-btn {
         top: 86%;
         min-width: 140px;
@@ -801,32 +1520,60 @@
         font-size: 26px;
       }
     }
+
   </style>
 </head>
 <body>
 
-  <!-- =========================
-       FIXED NAVBAR
-       ========================= -->
   <nav class="top-nav">
     <div class="nav-inner">
-      <a href="#top" class="nav-logo">
-        <img src="logo.png" alt="Sternum logo">
-      </a>
+<div class="nav-left">
+  <a href="#top" class="nav-logo">
+    <img src="logo.png" alt="Sternum logo">
+  </a>
 
-      <div class="nav-links">
-        <a href="#top">Home</a>
-       <a href="#media">Media</a>
-        <a href="#shows">Shows</a>
-        <a href="#about">About</a>
-      </div>
+<div class="social-links">
+
+  <a href="https://www.youtube.com/@Sternum_Arnhem" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24"><path fill="currentColor" d="M23.5 6.2s-.2-1.6-.8-2.3c-.8-.9-1.7-.9-2.1-1C17.7 2.7 12 2.7 12 2.7h0s-5.7 0-8.6.2c-.4 0-1.3.1-2.1 1C.7 4.6.5 6.2.5 6.2S.3 8 .3 9.8v1.6C.3 13.2.5 15 .5 15s.2 1.6.8 2.3c.8.9 1.9.9 2.4 1 1.7.2 7.3.2 7.3.2s5.7 0 8.6-.2c.4 0 1.3-.1 2.1-1 .6-.7.8-2.3.8-2.3s.2-1.8.2-3.6V9.8c0-1.8-.2-3.6-.2-3.6zM9.8 13.9V7.9l6 3-6 3z"/></svg>
+  </a>
+
+  <a href="https://www.instagram.com/sternum_arnhem_/" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24"><path fill="currentColor" d="M7 2C4.2 2 2 4.2 2 7v10c0 2.8 2.2 5 5 5h10c2.8 0 5-2.2 5-5V7c0-2.8-2.2-5-5-5H7zm5 5.3A4.7 4.7 0 1 1 7.3 12 4.7 4.7 0 0 1 12 7.3zm0 7.7A3 3 0 1 0 9 12a3 3 0 0 0 3 3zm4.8-8.9a1.1 1.1 0 1 1-1.1 1.1 1.1 1.1 0 0 1 1.1-1.1z"/></svg>
+  </a>
+
+  <a href="https://www.tiktok.com/@sternum_arnhem" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24"><path fill="currentColor" d="M12.5 2h2.3c.2 1.6 1.3 2.9 2.8 3.3v2.4c-1.2 0-2.3-.4-3.3-1v6.5a5.2 5.2 0 1 1-5.2-5.2c.3 0 .6 0 .9.1v2.6a2.6 2.6 0 1 0 2.6 2.6V2z"/></svg>
+  </a>
+
+  <a href="https://open.spotify.com/artist/4vGSuoAeV76BU6kibdqLhF" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm4.6 14.5a.8.8 0 0 1-1.1.3 9.3 9.3 0 0 0-9-.7.8.8 0 0 1-.7-1.4 10.9 10.9 0 0 1 10.6.8.8.8 0 0 1 .2 1zM17.7 13a1 1 0 0 1-1.3.3 11.5 11.5 0 0 0-11.2-.9 1 1 0 1 1-.8-1.8 13.5 13.5 0 0 1 13.1 1 1 1 0 0 1 .2 1.4zm.1-3.6a1.2 1.2 0 0 1-1.5.4 13.7 13.7 0 0 0-13.2-1 1.2 1.2 0 1 1-1-2.2 16.1 16.1 0 0 1 15.5 1.2 1.2 1.2 0 0 1 .2 1.6z"/></svg>
+  </a>
+
+</div>
+</div>
+
+   <div class="nav-links">
+  <a href="#top">Home</a>
+  <a href="#media">Media</a>
+  <a href="#shows">Shows</a>
+  <a href="#about">About</a>
+
+  <button class="booking-trigger" id="openBookingModal" type="button">Booking</button>
+
+  <a href="https://wa.me/31636222283"
+     target="_blank"
+     rel="noopener"
+     class="whatsapp-icon"
+     aria-label="WhatsApp">
+    <svg viewBox="0 0 24 24">
+      <path fill="currentColor" d="M20 3.5A11.9 11.9 0 0 0 12 .5a11.8 11.8 0 0 0-10 17.9L.5 23.5l5.2-1.4A11.8 11.8 0 1 0 20 3.5zm-8 17a9.3 9.3 0 0 1-4.7-1.3l-.3-.2-3.1.8.8-3-.2-.3A9.3 9.3 0 1 1 12 20.5zm5.3-7c-.3-.1-1.8-.9-2.1-1s-.5-.1-.7.1-.8 1-.9 1.1-.3.2-.6.1a7.6 7.6 0 0 1-2.2-1.4 8.4 8.4 0 0 1-1.6-2c-.2-.3 0-.5.1-.6l.5-.6a2 2 0 0 0 .3-.6.6.6 0 0 0 0-.6c-.1-.1-.7-1.7-1-2.3s-.5-.5-.7-.5h-.6a1.1 1.1 0 0 0-.8.4 3.3 3.3 0 0 0-1 2.4 5.7 5.7 0 0 0 1.2 3.1 13 13 0 0 0 5 4.4c.7.3 1.2.5 1.6.6a3.9 3.9 0 0 0 1.8.1 3 3 0 0 0 2-1.4 2.4 2.4 0 0 0 .2-1.4c-.1-.1-.3-.2-.6-.3z"/>
+    </svg>
+  </a>
+</div>
     </div>
   </nav>
 
-  <!-- =========================
-       SCROLL DOTS
-       hero / release / shows / about / footer
-       ========================= -->
   <div class="scroll-dots">
     <span></span>
     <span></span>
@@ -835,108 +1582,133 @@
     <span></span>
   </div>
 
-  <!-- =========================
-       HERO
-       ========================= -->
   <section class="panel hero" id="top">
     <div class="hero-content">
-      <a href="#release" class="metal-btn">LISTEN NOW</a>
+      <a href="#media" class="metal-btn">LISTEN NOW</a>
     </div>
   </section>
 
-  <!-- =========================
-  MEDIA
-       ========================= -->
-  
-<section class="panel media-panel" id="media">
-  <div class="media-bg"></div>
+  <section class="panel media-panel" id="media">
+    <div class="media-bg"></div>
 
-  <div class="container media-container">
-    <h2>Media</h2>
+    <div class="container media-container">
+      <h2>Media</h2>
 
-    <div class="video-shell">
-      <button class="sound-btn" id="soundToggle" type="button">SOUND ON</button>
+     <div class="video-shell">
+  <div class="media-controls">
+<button class="sound-btn is-muted" id="soundToggle" type="button" aria-label="Geluid aan/uit">
+  <svg class="sound-icon" viewBox="0 0 24 24" aria-hidden="true">
+    <path id="soundIconPath" fill="currentColor" d="M16.5 12c0-1.77-1-3.29-2.5-4.03v8.05c1.5-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77zM3 9v6h4l5 5V4L7 9H3z"></path>
+  </svg>
+</button>
 
-    <div class="video-wrapper">
-  <div id="sternum-player"></div>
-</div>
-
-<div class="video-selector">
-  <button class="video-btn active" data-video="8SoVOSPKfFM">OFFICIAL</button>
-  <button class="video-btn" data-video="crqBlHuaXx8">LIVE 1</button>
-  <button class="video-btn" data-video="qXEczPrFfQ4">LIVE 2</button>
-  <button class="video-btn" data-video="">SESSION</button>
-</div>
+    <div class="video-selector">
+      <button class="video-btn active" data-video="8SoVOSPKfFM">OFFICIAL</button>
+      <button class="video-btn" data-video="crqBlHuaXx8">LIVE 1</button>
+      <button class="video-btn" data-video="qXEczPrFfQ4">LIVE 2</button>
+      <button class="video-btn" data-video="" disabled>SESSION</button>
     </div>
   </div>
-</section>
 
-  <!-- =========================
-       SHOWS / TOUR STYLE
-       ========================= -->
- <section class="panel shows-bg" id="shows">
+  <div class="video-wrapper">
+    <div id="sternum-player"></div>
+  </div>
+
+  <div class="spotify-block">
+    <iframe
+      src="https://open.spotify.com/embed/artist/4vGSuoAeV76BU6kibdqLhF"
+      width="100%"
+      height="180"
+      frameborder="0"
+      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+      loading="lazy">
+    </iframe>
+  </div>
+</div>
+    </div>
+  </section>
+
+<section class="panel shows-bg" id="shows">
   <div class="container">
     <h2>Shows</h2>
 
-    <div class="tour-list">
+    <div class="shows-layout">
 
-      <div class="tour-row">
-        <div class="tour-date">
-          <span class="tour-day">19</span>
-          <span class="tour-month">NOV</span>
-          <span class="tour-year">'25</span>
-        </div>
-        <div class="tour-info">
-          <div class="tour-title">Willemeen</div>
-          <div class="tour-meta">Arnhem · met Uncentered + DANA</div>
+      <div class="shows-featured-block">
+        <p class="shows-subtitle">Upcoming</p>
+
+        <div class="featured-shows">
+          <div class="tour-row">
+            <div class="tour-date">
+              <span class="tour-day">27</span>
+              <span class="tour-month">APR</span>
+              <span class="tour-year">'26</span>
+            </div>
+            <div class="tour-info">
+              <div class="tour-title">Willemeen — Koningsdag</div>
+              <div class="tour-meta">Arnhem · TBA</div>
+            </div>
+          </div>
+
+          <div class="tour-row">
+            <div class="tour-date">
+              <span class="tour-day">21</span>
+              <span class="tour-month">MAR</span>
+              <span class="tour-year">'26</span>
+            </div>
+            <div class="tour-info">
+              <div class="tour-title">Nest Fest — Café Bosch</div>
+              <div class="tour-meta">Arnhem · met meerdere bands</div>
+            </div>
+          </div>
         </div>
       </div>
 
-      <div class="tour-row">
-        <div class="tour-date">
-          <span class="tour-day">13</span>
-          <span class="tour-month">DEC</span>
-          <span class="tour-year">'25</span>
-        </div>
-        <div class="tour-info">
-          <div class="tour-title">Godfest — Willemeen</div>
-          <div class="tour-meta">Arnhem · line-up show</div>
-        </div>
-      </div>
+      <div class="shows-agenda-block">
+        <p class="shows-subtitle">Full Agenda</p>
 
-      <div class="tour-row">
-        <div class="tour-date">
-          <span class="tour-day">30</span>
-          <span class="tour-month">JAN</span>
-          <span class="tour-year">'26</span>
-        </div>
-        <div class="tour-info">
-          <div class="tour-title">Café Kroon</div>
-          <div class="tour-meta">Arnhem · met Baardvader · sold out</div>
-        </div>
-      </div>
+        <div class="agenda-list">
+          <div class="agenda-row">
+            <div class="agenda-date">27 APR '26</div>
+            <div class="agenda-venue">Willemeen — Koningsdag</div>
+            <div class="agenda-city">Arnhem</div>
+            <div class="agenda-note">TBA</div>
+          </div>
 
-      <div class="tour-row">
-        <div class="tour-date">
-          <span class="tour-day">04</span>
-          <span class="tour-month">FEB</span>
-          <span class="tour-year">'26</span>
-        </div>
-        <div class="tour-info">
-          <div class="tour-title">Willemeen</div>
-          <div class="tour-meta">Arnhem · Blackout / Mokrypse / Sternum</div>
-        </div>
-      </div>
+          <div class="agenda-row">
+            <div class="agenda-date">21 MAR '26</div>
+            <div class="agenda-venue">Nest Fest — Café Bosch</div>
+            <div class="agenda-city">Arnhem</div>
+            <div class="agenda-note">met meerdere bands</div>
+          </div>
 
-      <div class="tour-row">
-        <div class="tour-date">
-          <span class="tour-day">21</span>
-          <span class="tour-month">MAR</span>
-          <span class="tour-year">'26</span>
-        </div>
-        <div class="tour-info">
-          <div class="tour-title">Nest Fest — Café Bosch</div>
-          <div class="tour-meta">Arnhem · met meerdere bands</div>
+          <div class="agenda-row">
+            <div class="agenda-date">04 FEB '26</div>
+            <div class="agenda-venue">Willemeen</div>
+            <div class="agenda-city">Arnhem</div>
+            <div class="agenda-note">Blackout / Mokrypse / Sternum</div>
+          </div>
+
+          <div class="agenda-row">
+            <div class="agenda-date">30 JAN '26</div>
+            <div class="agenda-venue">Café Kroon</div>
+            <div class="agenda-city">Arnhem</div>
+            <div class="agenda-note">met Baardvader · sold out</div>
+          </div>
+
+          <div class="agenda-row">
+            <div class="agenda-date">13 DEC '25</div>
+            <div class="agenda-venue">Godfest — Willemeen</div>
+            <div class="agenda-city">Arnhem</div>
+            <div class="agenda-note">line-up show</div>
+          </div>
+
+          <div class="agenda-row">
+            <div class="agenda-date">19 NOV '25</div>
+            <div class="agenda-venue">Willemeen</div>
+            <div class="agenda-city">Arnhem</div>
+            <div class="agenda-note">met Uncentered + DANA</div>
+          </div>
         </div>
       </div>
 
@@ -944,16 +1716,61 @@
   </div>
 </section>
 
-  <!-- =========================
-       ABOUT
-       ========================= -->
-  <section class="panel about-panel" id="about">
+    <section class="panel about-panel" id="about">
     <div class="container">
       <h2>About</h2>
 
       <div class="about-stack">
-        <div class="about-image-large">
-          <img src="sternum1.png" alt="Sternum band">
+       <div class="about-image-large about-hover">
+
+  <!-- desktop -->
+  <img src="sternum1.png" alt="Sternum band" class="about-desktop-img">
+
+  <!-- mobile -->
+<div class="about-mobile-stack">
+  <div class="about-mobile-card">
+    <img src="nathan.png" alt="Nathan">
+    <span>Nathan — Bass</span>
+  </div>
+
+  <div class="about-mobile-card">
+    <img src="bas.png" alt="Bas">
+    <span>Bas — Guitar</span>
+  </div>
+
+  <div class="about-mobile-card">
+    <img src="luna.png" alt="Luna">
+    <span>Luna — Vocals</span>
+  </div>
+
+  <div class="about-mobile-card">
+    <img src="minck.png" alt="Minck">
+    <span>Minck — Drums</span>
+  </div>
+
+  <div class="about-mobile-card">
+    <img src="stijn.png" alt="Stijn">
+    <span>Stijn — Guitar</span>
+  </div>
+</div>
+
+  <div class="about-overlay">
+            <div class="about-person">
+              <span>Nathan — Bass</span>
+            </div>
+            <div class="about-person">
+              <span>Bas — Guitar</span>
+            </div>
+            <div class="about-person">
+              <span>Luna — Vocals</span>
+            </div>
+            <div class="about-person">
+              <span>Minck — Drums</span>
+            </div>
+            <div class="about-person">
+              <span>Stijn — Guitar</span>
+            </div>
+          </div>
         </div>
 
         <div class="about-summary">
@@ -965,50 +1782,150 @@
       </div>
     </div>
   </section>
+  <div class="modal" id="aboutModal" aria-hidden="true">
+    <div class="modal-backdrop" data-close-modal="aboutModal"></div>
 
-  <!-- =========================
-       ABOUT MODAL
-       ========================= -->
-  <div class="about-modal" id="aboutModal" aria-hidden="true">
-    <div class="about-modal-backdrop" id="closeAboutModal"></div>
+    <div class="modal-dialog" role="dialog" aria-modal="true" aria-labelledby="aboutModalTitle">
+ <div class="modal-header">
+  <h3 id="aboutModalTitle">About Sternum</h3>
+  <button class="modal-close" data-close-modal="aboutModal" type="button" aria-label="Sluiten">×</button>
+</div>
 
-    <div class="about-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="aboutModalTitle">
-      <button class="about-modal-close" id="closeAboutModalBtn" type="button" aria-label="Sluiten">×</button>
 
-      <h3 id="aboutModalTitle">About Sternum</h3>
+<div class="modal-content">
 
-      <div class="about-modal-content">
-        <p>
-          Sternum is een opkomende metalband met een rauwe, moderne sound.
-          De band combineert strakke riffs, zware breakdowns en energieke live shows
-          tot een directe en intense liveset.
-        </p>
+  <h4 class="about-heading">DE BAND</h4>
+  <p>
+    Sternum is een jonge metalband uit Arnhem, bestaande uit Bas (gitaar), Luna (vocals), Minck (drums), Stijn (gitaar) en Nathan (bas). Ondanks hun leeftijd maakt de band al volledig eigen muziek, met invloeden uit moderne metalbands zoals Slipknot en Kittie.
+  </p>
 
-        <p>
-          Met een donkere visuele stijl en een sterke focus op sfeer en performance
-          bouwt Sternum aan een eigen identiteit die zowel live als online herkenbaar is.
-        </p>
+  <h4 class="about-heading">ONTSTAAN</h4>
+  <p>
+    De band ontstond toen Bas, Luna en Minck elkaar leerden kennen tijdens een buitenschools muziektraject. Wat begon als een klein project groeide al snel uit tot een serieuze band. Later sloten Stijn en Nathan aan, waarmee Sternum compleet werd. Sindsdien wordt er wekelijks gerepeteerd en gewerkt aan nieuw materiaal.
+  </p>
 
-        <p>
-          Deze website is het centrale punt voor releases, shows en nieuwe updates rond de band.
-        </p>
+  <h4 class="about-heading">MUZIEK</h4>
+  <p>
+    De nummers ontstaan vaak vanuit gitaarriffs van Bas en Stijn. Tijdens repetities bouwen ze die samen uit met drums en bas, waarna Luna haar eigen teksten en vocalen toevoegt. De muziek is rauw, energiek en direct, met ruimte voor experiment en eigen invulling.
+  </p>
+
+  <h4 class="about-heading">ONTWIKKELING</h4>
+  <p>
+    Via het ontwikkeltraject Popspot kreeg Sternum de kans om zich verder te verdiepen in zowel muziek als live optredens. Ze leerden daar niet alleen beter samen spelen, maar ook hoe je als band optredens regelt en jezelf presenteert. In de afgelopen periode stonden ze op podia zoals Willemeen, Musis, Café Bosch en Gigant in Apeldoorn.
+  </p>
+
+  <h4 class="about-heading">EP</h4>
+  <p>
+    Tijdens dit traject nam de band hun eerste EP <strong>Porcelain Eyes</strong> op bij Lil Heaven Studios in Arnhem. Het opnemen van hun eigen muziek was een belangrijke stap, en het moment dat de nummers online kwamen voelde als een echte mijlpaal.
+  </p>
+
+</div>
       </div>
     </div>
   </div>
 
-  <!-- =========================
-       FOOTER
-       ========================= -->
+  <div class="modal" id="bookingModal" aria-hidden="true">
+    <div class="modal-backdrop" data-close-modal="bookingModal"></div>
+
+   <div class="modal-dialog" role="dialog" aria-modal="true" aria-labelledby="bookingModalTitle">
+  <div class="modal-header">
+    <h3 id="bookingModalTitle">Booking</h3>
+    <button class="modal-close" data-close-modal="bookingModal" type="button" aria-label="Sluiten">×</button>
+  </div>
+
+  <div class="modal-content">
+    <p>
+      Voor boekingen en show-aanvragen kun je hieronder direct een bericht sturen naar info@sternum-band.nl.
+    </p>
+     <form class="booking-form" id="bookingForm" action="https://formspree.io/f/xvzvrglv" method="POST">
+  <div class="booking-grid">
+    <label>
+      Naam
+      <input type="text" name="name" required>
+    </label>
+
+    <label>
+      E-mail
+      <input type="email" name="email" required>
+    </label>
+  </div>
+
+  <div class="booking-grid">
+    <label>
+      Onderwerp
+      <input type="text" name="subject" required>
+    </label>
+
+    <label>
+      Datum / locatie
+      <input type="text" name="details" placeholder="Bijv. 12 juni 2026 / Arnhem">
+    </label>
+  </div>
+
+ <label>
+  Bericht
+  <textarea name="message" required></textarea>
+</label>
+
+<!-- honeypot -->
+<input type="text" name="company" style="display:none">
+
+    <input type="hidden" name="_language" value="nl">
+
+  <button class="booking-submit" type="submit">VERSTUUR AANVRAAG</button>
+
+  <p class="booking-note" id="bookingFormStatus">
+    Je aanvraag wordt direct verzonden naar info@sternum-band.nl.
+  </p>
+</form>
+      </div>
+    </div>
+  </div>
+
   <section class="panel footer-panel">
-    <footer>
-      <p>Follow Sternum</p>
-      <p>Instagram | Spotify | YouTube</p>
-    </footer>
+<footer>
+  <div class="footer-bar">
+    <div class="footer-social">
+      <span class="footer-title">FOLLOW STERNUM</span>
+
+      <div class="footer-icons">
+        <a href="https://www.youtube.com/@Sternum_Arnhem" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24"><path fill="currentColor" d="M23.5 6.2s-.2-1.6-.8-2.3c-.8-.9-1.7-.9-2.1-1C17.7 2.7 12 2.7 12 2.7h0s-5.7 0-8.6.2c-.4 0-1.3.1-2.1 1C.7 4.6.5 6.2.5 6.2S.3 8 .3 9.8v1.6C.3 13.2.5 15 .5 15s.2 1.6.8 2.3c.8.9 1.9.9 2.4 1 1.7.2 7.3.2 7.3.2s5.7 0 8.6-.2c.4 0 1.3-.1 2.1-1 .6-.7.8-2.3.8-2.3s.2-1.8.2-3.6V9.8c0-1.8-.2-3.6-.2-3.6zM9.8 13.9V7.9l6 3-6 3z"/></svg>
+        </a>
+
+        <a href="https://www.instagram.com/sternum_arnhem_/" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24"><path fill="currentColor" d="M7 2C4.2 2 2 4.2 2 7v10c0 2.8 2.2 5 5 5h10c2.8 0 5-2.2 5-5V7c0-2.8-2.2-5-5-5H7zm5 5.3A4.7 4.7 0 1 1 7.3 12 4.7 4.7 0 0 1 12 7.3zm0 7.7A3 3 0 1 0 9 12a3 3 0 0 0 3 3zm4.8-8.9a1.1 1.1 0 1 1-1.1 1.1 1.1 1.1 0 0 1 1.1-1.1z"/></svg>
+        </a>
+
+        <a href="https://www.tiktok.com/@sternum_arnhem" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24"><path fill="currentColor" d="M12.5 2h2.3c.2 1.6 1.3 2.9 2.8 3.3v2.4c-1.2 0-2.3-.4-3.3-1v6.5a5.2 5.2 0 1 1-5.2-5.2c.3 0 .6 0 .9.1v2.6a2.6 2.6 0 1 0 2.6 2.6V2z"/></svg>
+        </a>
+
+        <a href="https://open.spotify.com/artist/4vGSuoAeV76BU6kibdqLhF" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm4.6 14.5a.8.8 0 0 1-1.1.3 9.3 9.3 0 0 0-9-.7.8.8 0 0 1-.7-1.4 10.9 10.9 0 0 1 10.6.8.8.8 0 0 1 .2 1zM17.7 13a1 1 0 0 1-1.3.3 11.5 11.5 0 0 0-11.2-.9 1 1 0 1 1-.8-1.8 13.5 13.5 0 0 1 13.1 1 1 1 0 0 1 .2 1.4zm.1-3.6a1.2 1.2 0 0 1-1.5.4 13.7 13.7 0 0 0-13.2-1 1.2 1.2 0 1 1-1-2.2 16.1 16.1 0 0 1 15.5 1.2 1.2 1.2 0 0 1 .2 1.6z"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="footer-cta">
+      <button class="footer-book-btn" id="openBookingModalFooter" type="button">
+        BOOKING
+      </button>
+
+ <a href="https://wa.me/31636222283"
+   target="_blank"
+   rel="noopener"
+   class="whatsapp-icon"
+   aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24">
+    <path fill="currentColor" d="M20 3.5A11.9 11.9 0 0 0 12 .5a11.8 11.8 0 0 0-10 17.9L.5 23.5l5.2-1.4A11.8 11.8 0 1 0 20 3.5zm-8 17a9.3 9.3 0 0 1-4.7-1.3l-.3-.2-3.1.8.8-3-.2-.3A9.3 9.3 0 1 1 12 20.5zm5.3-7c-.3-.1-1.8-.9-2.1-1s-.5-.1-.7.1-.8 1-.9 1.1-.3.2-.6.1a7.6 7.6 0 0 1-2.2-1.4 8.4 8.4 0 0 1-1.6-2c-.2-.3 0-.5.1-.6l.5-.6a2 2 0 0 0 .3-.6.6.6 0 0 0 0-.6c-.1-.1-.7-1.7-1-2.3s-.5-.5-.7-.5h-.6a1.1 1.1 0 0 0-.8.4 3.3 3.3 0 0 0-1 2.4 5.7 5.7 0 0 0 1.2 3.1 13 13 0 0 0 5 4.4c.7.3 1.2.5 1.6.6a3.9 3.9 0 0 0 1.8.1 3 3 0 0 0 2-1.4 2.4 2.4 0 0 0 .2-1.4c-.1-.1-.3-.2-.6-.3z"/>
+  </svg>
+</a>
+    </div>
+  </div>
+</footer>
   </section>
 
-  <!-- =========================
-       YOUTUBE IFRAME API
-       ========================= -->
   <script src="https://www.youtube.com/iframe_api"></script>
   <script>
     let sternumPlayer = null;
@@ -1016,7 +1933,7 @@
 
     function onYouTubeIframeAPIReady() {
       sternumPlayer = new YT.Player('sternum-player', {
-  videoId: '8SoVOSPKfFM',
+        videoId: '8SoVOSPKfFM',
         playerVars: {
           autoplay: 1,
           mute: 1,
@@ -1028,49 +1945,50 @@
           playlist: '8SoVOSPKfFM'
         },
         events: {
-       onReady: function () {
-  const btn = document.getElementById('soundToggle');
+          onReady: function () {
+            const soundButton = document.getElementById('soundToggle');
+            const videoButtons = document.querySelectorAll('.video-btn');
 
-  // VIDEO SWITCH LOGIC
-  const videoButtons = document.querySelectorAll('.video-btn');
+            videoButtons.forEach((button) => {
+              button.addEventListener('click', function () {
+                const videoId = this.getAttribute('data-video');
+                if (!sternumPlayer || !videoId) return;
 
-  videoButtons.forEach(button => {
-    button.addEventListener('click', function () {
-      const videoId = this.getAttribute('data-video');
+                sternumPlayer.loadVideoById(videoId);
 
-      if (!sternumPlayer) return;
-
-      sternumPlayer.loadVideoById(videoId);
-
-      videoButtons.forEach(b => b.classList.remove('active'));
-      this.classList.add('active');
-    });
-  });
-
-            btn.addEventListener('click', function () {
-              if (!sternumPlayer) return;
-
-              if (isMuted) {
-                sternumPlayer.unMute();
-                sternumPlayer.setVolume(100);
-                sternumPlayer.playVideo();
-                btn.textContent = 'SOUND OFF';
-                isMuted = false;
-              } else {
-                sternumPlayer.mute();
-                btn.textContent = 'SOUND ON';
-                isMuted = true;
-              }
+                videoButtons.forEach((b) => b.classList.remove('active'));
+                this.classList.add('active');
+              });
             });
+
+const soundIconPath = document.getElementById('soundIconPath');
+
+const ICON_MUTED = 'M16.5 12c0-1.77-1-3.29-2.5-4.03v8.05c1.5-.73 2.5-2.25 2.5-4.02zM19 12c0 .94-.2 1.82-.56 2.63l1.51 1.51A8.92 8.92 0 0 0 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3 3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.43.92-2.25 1.19v2.06a8.9 8.9 0 0 0 3.77-1.85L19.73 21 21 19.73 12 10.73 4.27 3z';
+const ICON_UNMUTED = 'M16.5 12c0-1.77-1-3.29-2.5-4.03v8.05c1.5-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77zM3 9v6h4l5 5V4L7 9H3z';
+
+soundButton.addEventListener('click', function () {
+  if (!sternumPlayer) return;
+
+  if (isMuted) {
+    sternumPlayer.unMute();
+    sternumPlayer.setVolume(100);
+    sternumPlayer.playVideo();
+    soundIconPath.setAttribute('d', ICON_UNMUTED);
+    soundButton.classList.remove('is-muted');
+    isMuted = false;
+  } else {
+    sternumPlayer.mute();
+    soundIconPath.setAttribute('d', ICON_MUTED);
+    soundButton.classList.add('is-muted');
+    isMuted = true;
+  }
+});
           }
         }
       });
     }
   </script>
 
-  <!-- =========================
-       SCROLL DOTS ACTIVE STATE
-       ========================= -->
   <script>
     const panels = document.querySelectorAll('.panel');
     const dots = document.querySelectorAll('.scroll-dots span');
@@ -1100,32 +2018,86 @@
     updateDots();
   </script>
 
-  <!-- =========================
-       ABOUT MODAL OPEN/CLOSE
-       ========================= -->
   <script>
+    function openModal(modal) {
+      modal.classList.add('is-open');
+      modal.setAttribute('aria-hidden', 'false');
+    }
+
+    function closeModal(modal) {
+      modal.classList.remove('is-open');
+      modal.setAttribute('aria-hidden', 'true');
+    }
+
     const aboutModal = document.getElementById('aboutModal');
-    const openAboutModal = document.getElementById('openAboutModal');
-    const closeAboutModal = document.getElementById('closeAboutModal');
-    const closeAboutModalBtn = document.getElementById('closeAboutModalBtn');
+    const bookingModal = document.getElementById('bookingModal');
+   const openAboutModal = document.getElementById('openAboutModal');
+const openBookingModal = document.getElementById('openBookingModal');
+const openBookingModalFooter = document.getElementById('openBookingModalFooter');
 
-    function openModal() {
-      aboutModal.classList.add('is-open');
-      aboutModal.setAttribute('aria-hidden', 'false');
-    }
+if (openAboutModal) {
+  openAboutModal.addEventListener('click', () => openModal(aboutModal));
+}
 
-    function closeModal() {
-      aboutModal.classList.remove('is-open');
-      aboutModal.setAttribute('aria-hidden', 'true');
-    }
+if (openBookingModal) {
+  openBookingModal.addEventListener('click', () => openModal(bookingModal));
+}
 
-    if (openAboutModal) openAboutModal.addEventListener('click', openModal);
-    if (closeAboutModal) closeAboutModal.addEventListener('click', closeModal);
-    if (closeAboutModalBtn) closeAboutModalBtn.addEventListener('click', closeModal);
+if (openBookingModalFooter) {
+  openBookingModalFooter.addEventListener('click', () => openModal(bookingModal));
+}
+
+    document.querySelectorAll('[data-close-modal]').forEach((button) => {
+      button.addEventListener('click', function () {
+        const modalId = this.getAttribute('data-close-modal');
+        const modal = document.getElementById(modalId);
+        if (modal) closeModal(modal);
+      });
+    });
 
     document.addEventListener('keydown', function (event) {
-      if (event.key === 'Escape') closeModal();
+      if (event.key === 'Escape') {
+        if (aboutModal.classList.contains('is-open')) closeModal(aboutModal);
+        if (bookingModal.classList.contains('is-open')) closeModal(bookingModal);
+      }
     });
   </script>
+<script>
+  const bookingForm = document.getElementById('bookingForm');
+  const bookingFormStatus = document.getElementById('bookingFormStatus');
+
+  bookingForm.addEventListener('submit', async function (event) {
+    event.preventDefault();
+
+// honeypot check
+if (bookingForm.elements['company'].value !== '') {
+  return; // bot → stop
+}
+
+const formData = new FormData(bookingForm);
+
+    bookingFormStatus.textContent = 'Bezig met verzenden...';
+
+    try {
+      const response = await fetch(bookingForm.action, {
+        method: 'POST',
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+
+      if (response.ok) {
+        bookingForm.reset();
+        bookingFormStatus.textContent = 'Dank. Je bookingaanvraag is verzonden.';
+      } else {
+        bookingFormStatus.textContent = 'Verzenden mislukt. Probeer het opnieuw of mail direct naar info@sternum-band.nl.';
+      }
+    } catch (error) {
+      bookingFormStatus.textContent = 'Verzenden mislukt. Probeer het opnieuw of mail direct naar info@sternum-band.nl.';
+    }
+  });
+</script>
+
 </body>
 </html>

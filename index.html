@@ -495,9 +495,9 @@ if (location.hostname === "sternum-band.nl") {
   background: rgba(255, 77, 77, 0.2);
 }
 
-/* alleen tonen in fullscreen */
-.video-wrapper:fullscreen .exit-fullscreen-btn {
-  display: block;
+.video-wrapper:fullscreen:hover .exit-fullscreen-btn {
+  opacity: 1;
+  pointer-events: auto;
 }
   .video-wrapper::before {
     content: "";

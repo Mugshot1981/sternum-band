@@ -485,7 +485,9 @@ if (location.hostname === "sternum-band.nl") {
   color: #fff;
   font-size: 20px;
   cursor: pointer;
-  display: none;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
 }
 
 .exit-fullscreen-btn:hover {

@@ -472,6 +472,29 @@ if (location.hostname === "sternum-band.nl") {
     0 0 40px rgba(139, 0, 0, 0.15);
   overflow: hidden;
   z-index: 2;
+.exit-fullscreen-btn {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  z-index: 20;
+  width: 44px;
+  height: 44px;
+  border: 1px solid rgba(255,255,255,0.3);
+  background: rgba(0,0,0,0.6);
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+  display: none;
+}
+
+.exit-fullscreen-btn:hover {
+  border-color: #ff4d4d;
+  background: rgba(255, 77, 77, 0.2);
+}
+
+/* alleen tonen in fullscreen */
+.video-wrapper:fullscreen .exit-fullscreen-btn {
+  display: block;
 }
   .video-wrapper::before {
     content: "";
@@ -2107,6 +2130,7 @@ const formData = new FormData(bookingForm);
 </script>
 <script>
   const fullscreenToggle = document.getElementById("fullscreenToggle");
+  const exitBtn = document.getElementById("exitFullscreenBtn");
   const videoWrapper = document.querySelector(".video-wrapper");
 
   if (fullscreenToggle && videoWrapper) {
@@ -2118,7 +2142,15 @@ const formData = new FormData(bookingForm);
           await document.exitFullscreen();
         }
       } catch (err) {
-        console.error("Fullscreen failed:", err);
+        console.error(err);
+      }
+    });
+  }
+
+  if (exitBtn) {
+    exitBtn.addEventListener("click", async () => {
+      if (document.fullscreenElement) {
+        await document.exitFullscreen();
       }
     });
   }

@@ -2076,6 +2076,23 @@ const formData = new FormData(bookingForm);
     }
   });
 </script>
+<script>
+  const fullscreenToggle = document.getElementById("fullscreenToggle");
+  const videoWrapper = document.querySelector(".video-wrapper");
 
+  if (fullscreenToggle && videoWrapper) {
+    fullscreenToggle.addEventListener("click", async () => {
+      try {
+        if (!document.fullscreenElement) {
+          await videoWrapper.requestFullscreen();
+        } else {
+          await document.exitFullscreen();
+        }
+      } catch (err) {
+        console.error("Fullscreen failed:", err);
+      }
+    });
+  }
+</script>
 </body>
 </html>

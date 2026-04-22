@@ -355,11 +355,10 @@ if (location.hostname === "sternum-band.nl") {
   text-shadow: 0 0 8px rgba(139, 0, 0, 0.8);
 }
 
-  .metal-btn {
-    position: absolute;
-    left: 50%;
-    top: 78%;
-    transform: translate(-50%, -50%);
+   .metal-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     min-width: 170px;
     padding: 14px 36px;
     font-family: 'Bebas Neue', sans-serif;
@@ -385,11 +384,11 @@ if (location.hostname === "sternum-band.nl") {
     border-color: var(--accent);
     box-shadow: 0 0 15px rgba(139, 0, 0, 0.6);
     background: rgba(0, 0, 0, 0.82);
-    transform: translate(-50%, calc(-50% - 2px));
+    transform: translateY(-2px);
   }
 
   .metal-btn:active {
-    transform: translate(-50%, -50%);
+    transform: translateY(0);
   }
 
   #media {

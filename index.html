@@ -146,81 +146,93 @@ if (location.hostname === "sternum-band.nl") {
     margin-top: 6px;
   }
 
-  .support-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 240px;
-  padding: 16px 34px;
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 21px;
-  letter-spacing: 2px;
-  line-height: 1;
-  color: #ffffff;
-  background: rgba(0, 0, 0, 0.85);
-  border: 1px solid rgba(139, 0, 0, 0.9);
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-  box-shadow:
-    0 0 0 rgba(139, 0, 0, 0),
-    0 0 20px rgba(139, 0, 0, 0.25);
-
-  animation: pulseGlow 2.4s ease-in-out infinite;
-
-  transition:
-    border-color 0.2s ease,
-    box-shadow 0.2s ease,
-    background 0.2s ease,
-    transform 0.15s ease;
-  cursor: pointer;
-}
-
-/* subtiele puls */
-@keyframes pulseGlow {
-  0% {
+   .support-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 240px;
+    padding: 16px 34px;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 21px;
+    letter-spacing: 2px;
+    line-height: 1;
+    color: #ffffff;
+    background: linear-gradient(180deg, rgba(20, 20, 20, 0.96), rgba(0, 0, 0, 0.96));
+    border: 1px solid rgba(180, 20, 20, 0.95);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
     box-shadow:
-      0 0 0 rgba(139, 0, 0, 0),
-      0 0 20px rgba(139, 0, 0, 0.2);
-  }
-  50% {
-    box-shadow:
-      0 0 0 4px rgba(139, 0, 0, 0.15),
-      0 0 30px rgba(139, 0, 0, 0.55);
-  }
-  100% {
-    box-shadow:
-      0 0 0 rgba(139, 0, 0, 0),
-      0 0 20px rgba(139, 0, 0, 0.2);
-  }
-}
+      0 0 0 0 rgba(139, 0, 0, 0.0),
+      0 0 22px rgba(139, 0, 0, 0.28);
 
-/* hover = agressiever */
-.support-btn:hover {
-  border-color: #ff3b3b;
-  background: rgba(0, 0, 0, 0.95);
-  box-shadow:
-    0 0 0 4px rgba(139, 0, 0, 0.2),
-    0 0 40px rgba(139, 0, 0, 0.8);
-  transform: translateY(-2px) scale(1.02);
-}
+    animation: pulseGlow 1.8s ease-in-out infinite;
+    transition:
+      border-color 0.2s ease,
+      box-shadow 0.2s ease,
+      background 0.2s ease,
+      transform 0.15s ease;
+    cursor: pointer;
+  }
 
-/* klik feedback */
-.support-btn:active {
-  transform: scale(0.97);
-  box-shadow:
-    0 0 0 2px rgba(139, 0, 0, 0.3),
-    0 0 18px rgba(139, 0, 0, 0.6);
-}
+  .support-btn::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      120deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.08) 35%,
+      rgba(255, 255, 255, 0.18) 50%,
+      rgba(255, 255, 255, 0.08) 65%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    transform: translateX(-130%);
+    animation: supportShine 2.8s ease-in-out infinite;
+    pointer-events: none;
+  }
+
+  @keyframes pulseGlow {
+    0% {
+      box-shadow:
+        0 0 0 0 rgba(139, 0, 0, 0.00),
+        0 0 18px rgba(139, 0, 0, 0.20);
+    }
+    50% {
+      box-shadow:
+        0 0 0 6px rgba(139, 0, 0, 0.16),
+        0 0 34px rgba(139, 0, 0, 0.70);
+    }
+    100% {
+      box-shadow:
+        0 0 0 0 rgba(139, 0, 0, 0.00),
+        0 0 18px rgba(139, 0, 0, 0.20);
+    }
+  }
+
+  @keyframes supportShine {
+    0%, 55%, 100% {
+      transform: translateX(-130%);
+    }
+    70% {
+      transform: translateX(130%);
+    }
+  }
+
   .support-btn:hover {
-    border-color: var(--accent);
-    box-shadow: 0 0 15px rgba(139, 0, 0, 0.45);
-    background: rgba(0, 0, 0, 0.84);
-    transform: translateY(-2px);
+    border-color: #ff3b3b;
+    background: linear-gradient(180deg, rgba(28, 28, 28, 0.98), rgba(0, 0, 0, 0.98));
+    box-shadow:
+      0 0 0 6px rgba(139, 0, 0, 0.20),
+      0 0 42px rgba(139, 0, 0, 0.90);
+    transform: translateY(-2px) scale(1.03);
   }
 
   .support-btn:active {
-    transform: translateY(0);
+    transform: scale(0.97);
+    box-shadow:
+      0 0 0 3px rgba(139, 0, 0, 0.28),
+      0 0 20px rgba(139, 0, 0, 0.60);
   }
 
   .support-image-wrap {

@@ -147,27 +147,71 @@ if (location.hostname === "sternum-band.nl") {
   }
 
   .support-btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    min-width: 220px;
-    padding: 15px 30px;
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 20px;
-    letter-spacing: 1.8px;
-    line-height: 1;
-    color: #ffffff;
-    background: rgba(0, 0, 0, 0.72);
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    text-align: center;
-    transition:
-      border-color 0.2s ease,
-      box-shadow 0.2s ease,
-      background 0.2s ease,
-      transform 0.2s ease;
-    cursor: pointer;
-  }
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 240px;
+  padding: 16px 34px;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 21px;
+  letter-spacing: 2px;
+  line-height: 1;
+  color: #ffffff;
+  background: rgba(0, 0, 0, 0.85);
+  border: 1px solid rgba(139, 0, 0, 0.9);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  box-shadow:
+    0 0 0 rgba(139, 0, 0, 0),
+    0 0 20px rgba(139, 0, 0, 0.25);
 
+  animation: pulseGlow 2.4s ease-in-out infinite;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease,
+    transform 0.15s ease;
+  cursor: pointer;
+}
+
+/* subtiele puls */
+@keyframes pulseGlow {
+  0% {
+    box-shadow:
+      0 0 0 rgba(139, 0, 0, 0),
+      0 0 20px rgba(139, 0, 0, 0.2);
+  }
+  50% {
+    box-shadow:
+      0 0 0 4px rgba(139, 0, 0, 0.15),
+      0 0 30px rgba(139, 0, 0, 0.55);
+  }
+  100% {
+    box-shadow:
+      0 0 0 rgba(139, 0, 0, 0),
+      0 0 20px rgba(139, 0, 0, 0.2);
+  }
+}
+
+/* hover = agressiever */
+.support-btn:hover {
+  border-color: #ff3b3b;
+  background: rgba(0, 0, 0, 0.95);
+  box-shadow:
+    0 0 0 4px rgba(139, 0, 0, 0.2),
+    0 0 40px rgba(139, 0, 0, 0.8);
+  transform: translateY(-2px) scale(1.02);
+}
+
+/* klik feedback */
+.support-btn:active {
+  transform: scale(0.97);
+  box-shadow:
+    0 0 0 2px rgba(139, 0, 0, 0.3),
+    0 0 18px rgba(139, 0, 0, 0.6);
+}
   .support-btn:hover {
     border-color: var(--accent);
     box-shadow: 0 0 15px rgba(139, 0, 0, 0.45);

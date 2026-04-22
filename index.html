@@ -281,64 +281,6 @@ if (location.hostname === "sternum-band.nl") {
     position: absolute;
     inset: 0;
     z-index: 2;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    padding: 120px 72px 72px 72px;
-  }
-
-  .hero-copy {
-    max-width: 720px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 14px;
-  }
-
-  .hero-kicker {
-    display: inline-block;
-    padding: 8px 14px;
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 18px;
-    letter-spacing: 2px;
-    line-height: 1;
-    color: #ffffff;
-    background: rgba(139, 0, 0, 0.28);
-    border: 1px solid rgba(139, 0, 0, 0.9);
-    box-shadow: 0 0 14px rgba(139, 0, 0, 0.20);
-  }
-
-  .hero-title {
-    margin: 0;
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(56px, 8vw, 108px);
-    line-height: 0.92;
-    letter-spacing: 2px;
-    color: #ffffff;
-    text-shadow: 0 0 24px rgba(0, 0, 0, 0.75);
-  }
-
-  .hero-text {
-    max-width: 620px;
-    font-size: 20px;
-    line-height: 1.6;
-    color: rgba(255, 255, 255, 0.92);
-    text-shadow: 0 0 14px rgba(0, 0, 0, 0.6);
-  }
-
-  .hero-goal {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 22px;
-    letter-spacing: 1.8px;
-    color: #ff4d4d;
-    text-shadow: 0 0 12px rgba(0, 0, 0, 0.55);
-  }
-
-  .hero-actions {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 14px;
-    margin-top: 8px;
   }
  .show-link {
  color: #ff4d4d;
@@ -355,10 +297,11 @@ if (location.hostname === "sternum-band.nl") {
   text-shadow: 0 0 8px rgba(139, 0, 0, 0.8);
 }
 
-   .metal-btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
+  .metal-btn {
+    position: absolute;
+    left: 50%;
+    top: 78%;
+    transform: translate(-50%, -50%);
     min-width: 170px;
     padding: 14px 36px;
     font-family: 'Bebas Neue', sans-serif;
@@ -384,11 +327,11 @@ if (location.hostname === "sternum-band.nl") {
     border-color: var(--accent);
     box-shadow: 0 0 15px rgba(139, 0, 0, 0.6);
     background: rgba(0, 0, 0, 0.82);
-    transform: translateY(-2px);
+    transform: translate(-50%, calc(-50% - 2px));
   }
 
   .metal-btn:active {
-    transform: translateY(0);
+    transform: translate(-50%, -50%);
   }
 
   #media {
@@ -1291,12 +1234,14 @@ if (location.hostname === "sternum-band.nl") {
 }
 
 .metal-btn {
-  min-width: 0;
-  width: 100%;
-  max-width: 260px;
-  padding: 12px 20px;
+  top: 50%;
+  bottom: auto;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 150px;
+  padding: 12px 24px;
   font-size: 18px;
-  letter-spacing: 1.4px;
+  letter-spacing: 1.5px;
   line-height: 1;
 }
 
@@ -1649,27 +1594,7 @@ if (location.hostname === "sternum-band.nl") {
 
   <section class="panel hero" id="top">
     <div class="hero-content">
-      <div class="hero-copy">
-        <div class="hero-kicker">STERNUM GO FUND ME</div>
-
-        <h1 class="hero-title">
-          HELP US FUND<br>
-          OUR FIRST<br>
-          STUDIO ALBUM
-        </h1>
-
-        <p class="hero-text">
-          We’ve got the songs, the studio and the vision. Now we need your support
-          to make our heaviest release yet become real.
-        </p>
-
-        <div class="hero-goal">GOAL: €4,500</div>
-
-        <div class="hero-actions">
-          <a href="https://gofund.me/298da42c6" target="_blank" rel="noopener" class="metal-btn">SUPPORT THE ALBUM</a>
-          <a href="#media" class="metal-btn">LISTEN NOW</a>
-        </div>
-      </div>
+      <a href="#media" class="metal-btn">LISTEN NOW</a>
     </div>
   </section>
 
